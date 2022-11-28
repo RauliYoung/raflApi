@@ -1,0 +1,28 @@
+/*Tässä navBarin tyylit*/
+.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #216477;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.nav-bar-list {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+.list-a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.list-a a:hover {
+  background-color: #216477;
+}
+/*Tässä navBarin tyylit*/
