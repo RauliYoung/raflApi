@@ -1,4 +1,4 @@
-/*Tässä navBarin tyylit*/
+/*NavBar styles*/
 .nav-bar {
   list-style-type: none;
   margin: 0;
@@ -25,4 +25,17 @@
 .list-a a:hover {
   background-color: #216477;
 }
-/*Tässä navBarin tyylit*/
+/*NavBar styles*/
+
+/* For mobile phones: */
+@media only screen and (max-width: 620px) {
+  .list-a a:hover,
+  .list-a,
+  .nav-bar-list,
+  .nav-bar {
+    width: 100%;
+    border-bottom: 1px solid #bbb;
+    text-align: center;
+  }
+}
+/* For mobile phones: */

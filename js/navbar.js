@@ -18,9 +18,6 @@ const makeNavBar = () => {
   <li class="nav-bar-list">
     <a href="${video}" class="list-a">Video</a> 
   </li>
-  <li style="float:right;border-left:1px solid #ffff">
-      <a href="" class="list-a">Muutokset</a>
-  </li>
 </ul> `;
 
   body.innerHTML += navBar;
