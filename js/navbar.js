@@ -1,24 +1,28 @@
 const makeNavBar = () => {
   const body = document.querySelector("body");
-  let video = "videon src tähän";
+  let video = "Video";
+  let ravintolat = "Ravintolat";
+  let elokuvateatterit = "Elokuvateatterit";
+  let tissit = "Tissit";
+  let tatuointiliikkeet = "";
 
-  const navBar = `<ul class="nav-bar">
+  const navBar = `<navbar><ul class="nav-bar">
   <li class="nav-bar-list">
     <a href="../index.html" class="list-a">Etusivu </a> 
   </li>
   <li class="nav-bar-list">
-    <a href="../viikko1/index.html" class="list-a">Viikko 1 </a> 
+    <a href="${ravintolat}" class="list-a">${ravintolat}</a> 
   </li>
   <li class="nav-bar-list">
-      <a href="../Viikko2/index.html" class="list-a">Viikko 2</a> 
+      <a href="${elokuvateatterit}" class="list-a">${elokuvateatterit}</a> 
   </li>
   <li class="nav-bar-list">
-    <a href="../Viikko3/index.html" class="list-a">Viikko 3</a> 
+    <a href="${tissit}" class="list-a">${tissit}</a> 
   </li>
-  <li class="nav-bar-list">
-    <a href="${video}" class="list-a">Video</a> 
+  <li class="nav-bar-list-right">
+    <a href="${video}" class="list-a">${video}</a> 
   </li>
-</ul> `;
+</ul> </navbar>`;
 
   body.innerHTML += navBar;
 };

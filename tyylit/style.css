@@ -1,3 +1,20 @@
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  justify-content: space-between;
+}
+s ssmain {
+  margin: 2%;
+  border: solid black;
+  padding: 2rem;
+  text-align: center;
+}
+
 /*NavBar styles*/
 .nav-bar {
   list-style-type: none;
@@ -13,6 +30,10 @@
   float: left;
   border-right: 1px solid #bbb;
 }
+.nav-bar-list-right {
+  float: right;
+  border-left: 1px solid #bbb;
+}
 
 .list-a {
   display: block;
@@ -23,7 +44,7 @@
 }
 
 .list-a a:hover {
-  background-color: #216477;
+  background-color: #12313a;
 }
 /*NavBar styles*/
 
@@ -35,7 +56,30 @@
   .nav-bar {
     width: 100%;
     border-bottom: 1px solid #bbb;
-    text-align: center;
+    text-align: left;
+  }
+  .nav-bar-list-right {
+    width: 100%;
+    border-bottom: 1px solid #bbb;
+    text-align: left;
   }
 }
 /* For mobile phones: */
+
+/* For tablets*/
+@media only screen and (max-width: 960px) {
+  .list-a a:hover,
+  .list-a,
+  .nav-bar-list,
+  .nav-bar {
+    width: 100%;
+    border-bottom: 1px solid #bbb;
+    text-align: left;
+  }
+  .nav-bar-list-right {
+    width: 100%;
+    border-bottom: 1px solid #bbb;
+    text-align: left;
+  }
+}
+/* For tablets*/
