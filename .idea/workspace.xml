@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ef9ca146-37c6-49c8-ae20-6bd2eceb9afa" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/tyylit/search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +44,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669719759967</updated>
-      <workItem from="1669719761167" duration="444000" />
+      <workItem from="1669719761167" duration="1454000" />
     </task>
     <servers />
   </component>
