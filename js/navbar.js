@@ -11,7 +11,7 @@ const makeNavBar = () => {
     <a href="../index.html" class="list-a">Etusivu </a> 
   </li>
   <li class="nav-bar-list">
-    <a href="${ravintolat}" class="list-a">${ravintolat}</a> 
+    <a href="../list.html" class="list-a" >${ravintolat}</a> 
   </li>
   <li class="nav-bar-list">
       <a href="${elokuvateatterit}" class="list-a">${elokuvateatterit}</a> 
