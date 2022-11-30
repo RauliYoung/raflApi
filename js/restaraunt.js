@@ -1,14 +1,19 @@
-// Url
-const queryString = window.location.search;
+// Get data from fetch
+const getData = (es) => {
+    console.log(es)
+}
 
-// GET parameters
-const urlParams = new URLSearchParams(queryString);
+// Get ID from GET params
+const getID = () => {
+    const query = window.location.search;
+    const urlParameters = new URLSearchParams(query);
+    const id = urlParameters.get('id')
+    //console.log(id)
+    idQuery(id)
 
-// JSON from GET parameters
-const urlJSON = urlParams.get('jason')
+}
 
-// Parse JSON from GET parameters
-jsonObject = JSON.parse(urlJSON+'"}')
+getID()
 
-console.log(jsonObject)
+
 

@@ -5,6 +5,20 @@ helsinki_coordinates = [60.192059, 24.945831]
 getLocation = () => {
     return helsinki_coordinates
 }
+const nothing = () => {
+    ;
+}
+
+async function getJSONString(json) {
+    try {
+        let result = JSON.stringify(json)
+        return result
+    }
+    catch {
+        console.error(error)
+    }
+    
+}
 
 // Map creation and zooming to Helsinki
 let map = L.map('map').setView([60.192059, 24.945831], 10);
@@ -22,24 +36,19 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 // Show circle with initial radius of 1000 meters
 let radiusCircle = L.circle(getLocation(), 1000, {
     color: "blue", fillOpacity: 0.2
-}).addTo(map).bindPopup("I am a circle.");;
+}).addTo(map).bindPopup("I am a circle.");
 
 // Adding search results to map
-addToMap = (json) => {
-    
+const addToMap = (json) => {
+
     // Coordinates and name
-    coordinates = [json.location.lat, json.location.lon]
-    restName = json.name.fi
-    jason = JSON.stringify(json)
+    let coordinates = [json.location.lat, json.location.lon]
+    let restName = json.name.fi
+    let id = json.id
 
-    // Marker
-    marker = L.marker(coordinates).bindPopup(`
+    layerGroup.addLayer(L.marker(coordinates).bindPopup(`
     <b>${restName}</b><br>
-    <a href='../resinfo.html?jason=${jason}' onclick=restarauntInfo(json)>Lisää tietoja ravintolasta<a/>
-    `);
-
-    // Adding marker to layer group
-    layerGroup.addLayer(marker)
+    <a href='../resinfo.html?id=${id}'>Lisää tietoja ravintolasta<a/>`)) 
 }
 
 // Show circle with modified radius
@@ -51,4 +60,3 @@ editCircle = (radius) => {
 resetMap = () => {
     layerGroup.clearLayers();
 }
-

@@ -1,5 +1,5 @@
 // Get the nearest restauraunts
-nearestQuery = (coordinates) => {
+const nearestQuery = (coordinates) => {
 
     apiCall = 'https://api.allorigins.win/get?url= ' + 
     encodeURIComponent('https://open-api.myhelsinki.fi/v2/places/?distance_filter=60.170957,24.942721,0.5')
@@ -21,9 +21,25 @@ nearestQuery = (coordinates) => {
     });
 }
 
-// Search restaraunt based on name (string), categories (array) and best rating (array)
-apiQuery = (name, types, rating) => {
+// Get one restaurant with specific ID
+const idQuery = (id) => {
 
+    apiCall = 'https://api.allorigins.win/get?url=' + 
+    encodeURIComponent('https://open-api.myhelsinki.fi/v2/place/'+id)
+
+    fetch(apiCall)                    
+    .then(function(response){  
+        return response.json();        
+    }).then(function(json){
+       getData(JSON.parse(json.contents))
+    }).catch(function(error){       
+        console.log(error);           
+    });
+}
+
+// Search restaraunt based on name (string), categories (array) and best rating (array)
+const apiQuery = (name, types, rating) => {
+       
     if (name == ""){
         name = ":D"
     }
@@ -33,15 +49,16 @@ apiQuery = (name, types, rating) => {
     encodeURIComponent('https://open-api.myhelsinki.fi/v2/places/?tags_search=restaurants')
 
     fetch(apiCall)                    
-    .then(function(response){        
+    .then(function(response){  
         return response.json();        
     }).then(function(json){
+        console.log("es")  
         resetMap()
         for (const i of JSON.parse(json.contents).data){
             restarauntName = i.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
             for (type of types) {
                 for (const tag of i.tags){
-                    if (tag.name.toLowerCase().includes(type)){
+                    if (tag.name.toLowerCase().includes(type)){      
                         addToMap(i);
                     }
                 }
@@ -50,19 +67,19 @@ apiQuery = (name, types, rating) => {
                 addToMap(i);
             }
     }        
-    }).catch(function(error){      
+    }).catch(function(error){       
         console.log(error);           
     });
 }
 
-search = () => {
+const search = () => {
     let queryValue = document.getElementsByClassName("searchField")[0].value;
     apiQuery(queryValue, [], [])
 }
 
-nearestQuery("")
-apiQuery("", ["bar"], [])
-
+//idQuery(289)
+//nearestQuery("")
+//apiQuery("", ["bar"], [])
 
 
 
