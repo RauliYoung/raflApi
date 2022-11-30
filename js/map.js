@@ -9,17 +9,6 @@ const nothing = () => {
     ;
 }
 
-async function getJSONString(json) {
-    try {
-        let result = JSON.stringify(json)
-        return result
-    }
-    catch {
-        console.error(error)
-    }
-    
-}
-
 // Map creation and zooming to Helsinki
 let map = L.map('map').setView([60.192059, 24.945831], 10);
 

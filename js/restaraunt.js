@@ -8,7 +8,6 @@ const getID = () => {
     const query = window.location.search;
     const urlParameters = new URLSearchParams(query);
     const id = urlParameters.get('id')
-    //console.log(id)
     idQuery(id)
 
 }
