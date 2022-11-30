@@ -14,6 +14,7 @@
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
     crossorigin=""></script>
     <link rel="stylesheet" href="tyylit/search.css">
+    <script src="js/slider.js"></script>
 </head>
 <body>
     <!-- navigation-->
@@ -25,7 +26,7 @@
     <!-- searchbar & buttons -->
     <div class="searchBox">
         <input type="text" class="searchField" size="50" placeholder="Search for café or restaurant">
-        <button type="button" class="searchButton">Search</button>
+        <button type="button" class="searchButton" onclick="search()">Search</button>
     </div>
     <div class="categories">
         <button type="button" class="categoriesButton">À la carte</button>
@@ -34,6 +35,20 @@
         <button type="button" class="categoriesButton">Pub</button>
     </div>
     <!-- searchbar & buttons -->
+
+    <!-- range slider -->
+    <div id="sliderDiv">
+        <label for="nearMeCheckbox" id="nearMeCheckboxText">Near me</label>
+        <input type="checkbox" id="nearMeCheckbox">
+        <div id="sliderLeft">0m</div>
+        <input type="range" id="slider" min="0" max="1000" value="500">
+        <div id="selector">
+            <div class="sliderButton"></div>
+            <div id="sliderValue"></div>
+        </div>
+        <div id="sliderRight">1000m</div>
+    </div>
+    <!-- range slider -->
 
     <!-- kartta -->
     <div id="map" style="height: 500px"></div>
