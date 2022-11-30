@@ -21,11 +21,13 @@ nearestQuery = (coordinates) => {
     });
 }
 
-// Search restaraunt with name and categories?
-apiQuery = (name, types) => {
+// Search restaraunt based on name (string), categories (array) and best rating (array)
+apiQuery = (name, types, rating) => {
+
     if (name == ""){
         name = ":D"
     }
+
     name = name.toLowerCase()
     apiCall = 'https://api.allorigins.win/get?url= ' + 
     encodeURIComponent('https://open-api.myhelsinki.fi/v2/places/?tags_search=restaurants')
@@ -40,14 +42,11 @@ apiQuery = (name, types) => {
             for (type of types) {
                 for (const tag of i.tags){
                     if (tag.name.toLowerCase().includes(type)){
-                        console.log(tag.name.toLowerCase())
-                        console.log("bar")
                         addToMap(i);
                     }
                 }
             }
             if (restarauntName.includes(name)){
-                console.log("ei")
                 addToMap(i);
             }
     }        
@@ -56,6 +55,15 @@ apiQuery = (name, types) => {
     });
 }
 
+search = () => {
+    let queryValue = document.getElementsByClassName("searchField")[0].value;
+    apiQuery(queryValue, [], [])
+}
+
 nearestQuery("")
-apiQuery("", ["bar"])
+apiQuery("", ["bar"], [])
+
+
+
+
 

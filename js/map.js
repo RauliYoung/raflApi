@@ -26,15 +26,16 @@ let radiusCircle = L.circle(getLocation(), 1000, {
 
 // Adding search results to map
 addToMap = (json) => {
-
+    
     // Coordinates and name
     coordinates = [json.location.lat, json.location.lon]
     restName = json.name.fi
+    jason = JSON.stringify(json)
 
     // Marker
     marker = L.marker(coordinates).bindPopup(`
     <b>${restName}</b><br>
-    <a href='../resinfo.html' onclick=restarauntInfo(${json})>Lisää tietoja ravintolasta<a/>
+    <a href='../resinfo.html?jason=${jason}' onclick=restarauntInfo(json)>Lisää tietoja ravintolasta<a/>
     `);
 
     // Adding marker to layer group
