@@ -57,7 +57,7 @@ apiQuery = (name, types, rating) => {
 
 search = () => {
     let queryValue = document.getElementsByClassName("searchField")[0].value;
-    apiQuery(queryValue, [])
+    apiQuery(queryValue, [], [])
 }
 
 nearestQuery("")
