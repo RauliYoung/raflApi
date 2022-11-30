@@ -24,7 +24,6 @@ nearestQuery = (coordinates) => {
 // Search restaraunt based on name (string), categories (array) and best rating (array)
 apiQuery = (name, types, rating) => {
 
-    console.log("klikki")
     if (name == ""){
         name = ":D"
     }
@@ -48,7 +47,6 @@ apiQuery = (name, types, rating) => {
                 }
             }
             if (restarauntName.includes(name)){
-                console.log("ei")
                 addToMap(i);
             }
     }        
