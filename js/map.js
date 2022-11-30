@@ -34,7 +34,7 @@ addToMap = (json) => {
     // Marker
     marker = L.marker(coordinates).bindPopup(`
     <b>${restName}</b><br>
-    <a href='../resinfo.html' onclick=restarauntInfo(${json})>Lisää tietoja ravintolasta<a/>
+    <a href='../resinfo.html' onclick=restarauntInfo(json)>Lisää tietoja ravintolasta<a/>
     `);
 
     // Adding marker to layer group
