@@ -22,8 +22,10 @@ nearestQuery = (coordinates) => {
 }
 
 // Search restaraunt with name and categories?
-apiQuery = (name, type) => {
-
+apiQuery = (name, types) => {
+    if (name == ""){
+        name = ":D"
+    }
     name = name.toLowerCase()
     apiCall = 'https://api.allorigins.win/get?url= ' + 
     encodeURIComponent('https://open-api.myhelsinki.fi/v2/places/?tags_search=restaurants')
@@ -35,15 +37,25 @@ apiQuery = (name, type) => {
         resetMap()
         for (const i of JSON.parse(json.contents).data){
             restarauntName = i.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
+            for (type of types) {
+                for (const tag of i.tags){
+                    if (tag.name.toLowerCase().includes(type)){
+                        console.log(tag.name.toLowerCase())
+                        console.log("bar")
+                        addToMap(i);
+                    }
+                }
+            }
             if (restarauntName.includes(name)){
+                console.log("ei")
                 addToMap(i);
-        }
-    }      
+            }
+    }        
     }).catch(function(error){      
         console.log(error);           
     });
 }
 
 nearestQuery("")
-apiQuery("luckiefun", "")
+apiQuery("", ["bar"])
 
