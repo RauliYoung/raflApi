@@ -1,8 +1,10 @@
+'use strict';
+
 // Longitude & Latitude of Helsinki
-helsinki_coordinates = [60.192059, 24.945831]
+let helsinki_coordinates = [60.192059, 24.945831]
 
 // Get current location
-getLocation = () => {
+const getLocation = () => {
     return helsinki_coordinates
 }
 const nothing = () => {
@@ -10,7 +12,7 @@ const nothing = () => {
 }
 
 // Map creation and zooming to Helsinki
-let map = L.map('map').setView([60.192059, 24.945831], 10);
+let map = L.map('map').setView(helsinki_coordinates, 10);
 
 // Layergroup for markers
 let layerGroup = L.layerGroup()
@@ -41,11 +43,11 @@ const addToMap = (json) => {
 }
 
 // Show circle with modified radius
-editCircle = (radius) => {
+const editCircle = (radius) => {
     radiusCircle.setRadius(radius)
 }
 
 // Marker reset
-resetMap = () => {
+const resetMap = () => {
     layerGroup.clearLayers();
 }

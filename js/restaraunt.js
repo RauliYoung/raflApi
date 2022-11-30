@@ -1,3 +1,5 @@
+"use strict";
+
 // Get data from fetch
 const getData = (es) => {
     console.log(es)

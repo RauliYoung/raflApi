@@ -1,7 +1,9 @@
+'use strict';
+
 // Get the nearest restauraunts
 const nearestQuery = (coordinates) => {
 
-    apiCall = 'https://api.allorigins.win/get?url= ' + 
+    const apiCall = 'https://api.allorigins.win/get?url= ' + 
     encodeURIComponent('https://open-api.myhelsinki.fi/v2/places/?distance_filter=60.170957,24.942721,0.5')
     fetch(apiCall)
                         
@@ -10,7 +12,7 @@ const nearestQuery = (coordinates) => {
     }).then(function(json){
         resetMap()
         for (let object of JSON.parse(json.contents).data){
-            for (let tag of object.tags){
+            for (const tag of object.tags){
                 if (tag.name == "restaurants"){
                     addToMap(object)
                 }
@@ -24,7 +26,7 @@ const nearestQuery = (coordinates) => {
 // Get one restaurant with specific ID
 const idQuery = (id) => {
 
-    apiCall = 'https://api.allorigins.win/get?url=' + 
+    const apiCall = 'https://api.allorigins.win/get?url=' + 
     encodeURIComponent('https://open-api.myhelsinki.fi/v2/place/'+id)
 
     fetch(apiCall)                    
@@ -45,9 +47,9 @@ const apiQuery = (name, types, rating) => {
     }
 
     name = name.toLowerCase()
-    apiCall = 'https://api.allorigins.win/get?url= ' + 
+    const apiCall = 'https://api.allorigins.win/get?url= ' + 
     encodeURIComponent('https://open-api.myhelsinki.fi/v2/places/?tags_search=restaurants')
-
+    
     fetch(apiCall)                    
     .then(function(response){  
         return response.json();        
@@ -55,7 +57,7 @@ const apiQuery = (name, types, rating) => {
         console.log("es")  
         resetMap()
         for (const i of JSON.parse(json.contents).data){
-            restarauntName = i.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
+            const restarauntName = i.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
             for (type of types) {
                 for (const tag of i.tags){
                     if (tag.name.toLowerCase().includes(type)){      
@@ -73,13 +75,13 @@ const apiQuery = (name, types, rating) => {
 }
 
 const search = () => {
-    let queryValue = document.getElementsByClassName("searchField")[0].value;
+    const queryValue = document.getElementsByClassName("searchField")[0].value;
     apiQuery(queryValue, [], [])
 }
 
 //idQuery(289)
-//nearestQuery("")
-//apiQuery("", ["bar"], [])
+nearestQuery("")
+apiQuery("luckiefun", [], [])
 
 
 
