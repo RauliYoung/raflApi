@@ -8,7 +8,7 @@ const urlParams = new URLSearchParams(queryString);
 const urlJSON = urlParams.get('jason')
 
 // Parse JSON from GET parameters
-jsonObject = JSON.parse(product+'"}')
+jsonObject = JSON.parse(urlJSON+'"}')
 
 console.log(jsonObject)
 
