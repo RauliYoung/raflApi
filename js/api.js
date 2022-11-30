@@ -28,7 +28,7 @@ apiQuery = (name, types, rating) => {
     if (name == ""){
         name = ":D"
     }
-    
+
     name = name.toLowerCase()
     apiCall = 'https://api.allorigins.win/get?url= ' + 
     encodeURIComponent('https://open-api.myhelsinki.fi/v2/places/?tags_search=restaurants')
@@ -63,7 +63,7 @@ search = () => {
 }
 
 nearestQuery("")
-apiQuery("", ["bar"])
+apiQuery("", ["bar"], [])
 
 
 
