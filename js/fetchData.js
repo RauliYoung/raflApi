@@ -10,6 +10,5 @@ const fetchData = async () => {
   const ravintolatOlio = JSON.parse(json.contents);
   //Olioista string joka tallennetaan cacheen.
   const objectString = JSON.stringify(ravintolatOlio);
-  console.log(objectString);
   localStorage.setItem("ravintolaOliot", objectString);
 };
