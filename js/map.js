@@ -23,14 +23,12 @@ function onSuccess (position) {
     currentLocation.push(latitude,longitude);
 }
 
-
-
 const nothing = () => {
 
 currentLocation=[latitude,longitude]
-}
 
-console.log(location);
+}
+console.log(currentLocation)
 
 // Map creation and zooming to Helsinki
 let map = new Map(helsinki_coordinates);
