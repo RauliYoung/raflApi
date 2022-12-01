@@ -1,5 +1,5 @@
-const ravintolat = localStorage.getItem("ravintolaOliot");
-const ravintolaOliot2 = JSON.parse(ravintolat).data;
+
+
 
 // Get the nearest restauraunts
 const nearestQuery = (coordinates) => {
@@ -46,18 +46,18 @@ const idQuery = (id) => {
     });
 };
 
-const nameQuery = (name, map) => {
+const nameQuery = (name) => {
+    const ravintolat = localStorage.getItem("ravintolaOliot");
+    const ravintolaOliot2 = JSON.parse(ravintolat).data;
   for (const objekt of ravintolaOliot2) {
     if (name.length > 0) {
       const restName = objekt.name.fi
         .toLowerCase()
         .replace(/[^a-zA-Z0-9 ]/g, "");
       if (restName.includes(name.toLowerCase())) {
-        map.addMarker(objekt.id, restName, objekt.coordinates);
+        map.addMarker(objekt.id, restName, [objekt.location.lat, objekt.location.lon]);
       }
-    } else {
-      map.addMarker(objekt.id, restName, objekt.coordinates);
-    }
+    } 
   }
 };
 
