@@ -4,6 +4,7 @@
 let helsinki_coordinates = [60.192059, 24.945831]
 
 // Get current location
+const currentLocation=[]
 let options
 
 options= {
@@ -20,7 +21,10 @@ function onSuccess (position) {
         latitude,
         longitude
     } = position.coords;
-const currentLocation=[latitude,longitude]
+    currentLocation.push(latitude,longitude);
+    
+
+
 
 const nothing = () => {
 
