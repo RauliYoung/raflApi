@@ -4,15 +4,31 @@
 let helsinki_coordinates = [60.192059, 24.945831]
 
 // Get current location
-const getLocation = () => {
-    return helsinki_coordinates
+let options
+
+options= {
+    enableHighAccuracy: true
+
 }
+navigator.geolocation.watchPosition(onSuccess,onError,options)
+
+function onError() {
+    console.log("failed to get location")
+}
+function onSuccess (position) {
+    const {
+        latitude,
+        longitude
+    } = position.coords;
+const currentLocation=[latitude,longitude]
+
 const nothing = () => {
-    ;
+
 }
+console.log(location);
 
 // Map creation and zooming to Helsinki
-let map = L.map('map').setView(helsinki_coordinates, 10);
+let map = L.map('map').setView(currentLocation,10);
 
 // Layergroup for markers
 let layerGroup = L.layerGroup()
@@ -25,7 +41,7 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 }).addTo(map);
 
 // Show circle with initial radius of 1000 meters
-let radiusCircle = L.circle(getLocation(), 1000, {
+let radiusCircle = L.circle(currentLocation, 1000, {
     color: "blue", fillOpacity: 0.2
 }).addTo(map).bindPopup("I am a circle.");
 
@@ -50,4 +66,4 @@ const editCircle = (radius) => {
 // Marker reset
 const resetMap = () => {
     layerGroup.clearLayers();
-}
+}}
