@@ -7,8 +7,9 @@ const fetchData = async () => {
   );
   const json = await response.json();
   //Luodaan kaikista ravintoloista olio.
-  const ravintolatOlio = JSON.parse(json.contents).data;
+  const ravintolatOlio = JSON.parse(json.contents);
   //Olioista string joka tallennetaan cacheen.
   const objectString = JSON.stringify(ravintolatOlio);
-  localStorage.setItem(objectString);
+  console.log(objectString);
+  localStorage.setItem("ravintolaOliot", objectString);
 };
