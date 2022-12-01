@@ -21,10 +21,16 @@
     ></script>
     <link rel="stylesheet" href="tyylit/search.css" />
     <script src="js/slider.js"></script>
-      <script src="js/mapclass.js"></script>
-</head>
+    <script src="js/mapclass.js"></script>
+  </head>
   <body>
     <script>
+      if (localStorage.getItem("ravintolaOliot") !== null) {
+        console.log("Ei ladattu uudestaan");
+      } else {
+        console.log("Ladattiin uudestaan");
+        fetchData();
+      }
       fetchData();
     </script>
     <!-- navigation-->
@@ -71,5 +77,5 @@
     <div id="map" style="height: 500px"></div>
     <script defer src="js/map.js"></script>
     <script defer src="js/api.js"></script>
-</body>
+  </body>
 </html>
