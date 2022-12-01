@@ -56,6 +56,7 @@ apiQuery = (name, types, rating) => {
 }
 
 search = () => {
+    let selected = selectedBtn();
     let queryValue = document.getElementsByClassName("searchField")[0].value;
     apiQuery(queryValue, [], [])
 }
