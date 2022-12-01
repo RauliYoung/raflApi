@@ -23,7 +23,7 @@ const callback = (response, status, pagination) => {
         displayResults();
     }
 }
-
+//rating from best
 const displayResults = () => {
     results.filter(result => result.rating)
         .sort((a, b) => a.rating > b.rating ? -1 : 1)
@@ -34,3 +34,4 @@ const displayResults = () => {
 }
 
 service.nearbySearch(request, callback);
+

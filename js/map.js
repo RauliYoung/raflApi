@@ -1,54 +1,41 @@
-// Longitude & Latitude of Helsinki
-helsinki_coordinates = [60.192059, 24.945831]
+'use strict';
 
-// Get current location
-getLocation = () => {
-    return helsinki_coordinates
+// Longitude & Latitude of Helsinki
+let helsinki_coordinates = [60.192059, 24.945831]
+
+const currentLocation=[]
+let options
+
+options= {
+    enableHighAccuracy: true
+
 }
+navigator.geolocation.watchPosition(onSuccess,onError,options)
+
+function onError() {
+    console.log("failed to get location")
+}
+function onSuccess (position) {
+    const {
+        latitude,
+        longitude
+    } = position.coords;
+    currentLocation.push(latitude,longitude);
+}
+
+const nothing = () => {
+
+currentLocation=[latitude,longitude]
+
+}
+console.log(currentLocation)
 
 // Map creation and zooming to Helsinki
-let map = L.map('map').setView([60.192059, 24.945831], 10);
-
-// Layergroup for markers
-let layerGroup = L.layerGroup()
-map.addLayer(layerGroup)
-
-// Map tilelayer
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-maxZoom: 19,
-attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-
-// Show circle with initial radius of 1000 meters
-let radiusCircle = L.circle(getLocation(), 1000, {
-    color: "blue", fillOpacity: 0.2
-}).addTo(map).bindPopup("I am a circle.");;
-
-// Adding search results to map
-addToMap = (json) => {
-    
-    // Coordinates and name
-    coordinates = [json.location.lat, json.location.lon]
-    restName = json.name.fi
-    jason = JSON.stringify(json)
-
-    // Marker
-    marker = L.marker(coordinates).bindPopup(`
-    <b>${restName}</b><br>
-    <a href='../resinfo.html?jason=${jason}' onclick=restarauntInfo(json)>Lisää tietoja ravintolasta<a/>
-    `);
-
-    // Adding marker to layer group
-    layerGroup.addLayer(marker)
-}
-
-// Show circle with modified radius
-editCircle = (radius) => {
-    radiusCircle.setRadius(radius)
-}
-
-// Marker reset
-resetMap = () => {
-    layerGroup.clearLayers();
-}
+let map = new Map(helsinki_coordinates);
+map.createMap()
+map.addMarker(289, "paska", helsinki_coordinates)
+map.resetMap()
+map.addMarker(289, "paska", helsinki_coordinates)
+map.createCircle(helsinki_coordinates, 500)
+map.deleteCircle()
 
