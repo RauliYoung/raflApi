@@ -9,6 +9,6 @@ const fetchData = async () => {
   //Luodaan kaikista ravintoloista olio.
   const ravintolatOlio = JSON.parse(json.contents).data;
   //Olioista string joka tallennetaan cacheen.
-  const objectString = JSON.stringify(ravintolatnOlio);
+  const objectString = JSON.stringify(ravintolatOlio);
   localStorage.setItem(objectString);
 };
