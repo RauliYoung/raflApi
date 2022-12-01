@@ -3,7 +3,6 @@
 // Longitude & Latitude of Helsinki
 let helsinki_coordinates = [60.192059, 24.945831]
 
-// Get current location
 const currentLocation=[]
 let options
 
@@ -22,52 +21,23 @@ function onSuccess (position) {
         longitude
     } = position.coords;
     currentLocation.push(latitude,longitude);
-    
+}
 
 
 
 const nothing = () => {
 
+currentLocation=[latitude,longitude]
 }
+
 console.log(location);
 
 // Map creation and zooming to Helsinki
-let map = L.map('map').setView(currentLocation,10);
+let map = new Map(helsinki_coordinates);
+map.createMap()
+map.addMarker(289, "paska", helsinki_coordinates)
+map.resetMap()
+map.addMarker(289, "paska", helsinki_coordinates)
+map.createCircle(helsinki_coordinates, 500)
+map.deleteCircle()
 
-// Layergroup for markers
-let layerGroup = L.layerGroup()
-map.addLayer(layerGroup)
-
-// Map tilelayer
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-maxZoom: 19,
-attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-
-// Show circle with initial radius of 1000 meters
-let radiusCircle = L.circle(currentLocation, 1000, {
-    color: "blue", fillOpacity: 0.2
-}).addTo(map).bindPopup("I am a circle.");
-
-// Adding search results to map
-const addToMap = (json) => {
-
-    // Coordinates and name
-    let coordinates = [json.location.lat, json.location.lon]
-    let restName = json.name.fi
-    let id = json.id
-
-    layerGroup.addLayer(L.marker(coordinates).bindPopup(`
-    <b>${restName}</b><br>
-    <a href='../resinfo.html?id=${id}'>Lisää tietoja ravintolasta<a/>`)) 
-}
-
-// Show circle with modified radius
-const editCircle = (radius) => {
-    radiusCircle.setRadius(radius)
-}
-
-// Marker reset
-const resetMap = () => {
-    layerGroup.clearLayers();
-}}
