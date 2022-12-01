@@ -40,27 +40,19 @@
     font-size: 16px;
     cursor: pointer;
 }
-#sliderDiv{
+
+#nearMeCheckbox{
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+#slider{
+    box-sizing: border-box;
     margin: auto;
-    max-width: 700px;
+    width: 60%;
     align-items: center;
     justify-content: center;
     display: flex;
     padding: 12px 16px 12px 16px;
-}
-#slider{
-    width: 40%;
-    -webkit-appearance: none;
-    background-color: #216477;
-    outline: none;
-    border-radius: 10px;
-}
-
-#nearMeCheckbox{
-    margin-right: 20px;
-    width: 25px;
-    height: 25px;
-}
-#nearMeCheckboxText{
-    margin-right: 10px;
 }
