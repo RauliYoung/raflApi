@@ -6,29 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="js/navbar.js"></script>
     <link rel="stylesheet" href="tyylit/style.css" />
+    <script src="./js/fetchData.js"></script>
     <title>RaflAPI</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
-    <link rel="stylesheet" href="tyylit/search.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" href="tyylit/search.css" />
     <script src="js/slider.js"></script>
     <script src="js/categories.js"></script>
     <script src="js/mapclass.js"></script>
-    <script src="js/fetchData.js"></script>
-</head>
-<body>
-<script>
-    if (localStorage.getItem("ravintolaOliot") !== null) {
+  </head>
+  <body>
+    <script>
+      if (localStorage.getItem("ravintolaOliot") !== null) {
         console.log("Ei ladattu uudestaan");
-    } else {
+      } else {
         console.log("Ladattiin uudestaan");
         fetchData();
-    }
-    fetchData();
-</script>
+      }
+      fetchData();
+    </script>
     <!-- navigation-->
     <script>
       makeNavBar();
@@ -37,26 +42,56 @@
 
     <!-- searchbar & buttons -->
     <div class="searchBox">
-        <input type="text" class="searchField" size="50" placeholder="Search for café or restaurant">
-        <button type="button" class="searchButton" id="searchBtn" onclick="search()">Search</button>
+      <input
+        type="text"
+        class="searchField"
+        size="50"
+        placeholder="Search for café or restaurant"
+      />
+      <button
+        type="button"
+        class="searchButton"
+        id="searchBtn"
+        onclick="search()"
+      >
+        Search
+      </button>
     </div>
     <div class="categories">
-        <button type="button" id="alacarte" class="categoriesButton" name="alacarte">À la carte</button>
-        <button type="button" id="cafe" class="categoriesButton" name="cafe">Café</button>
-        <button type="button" id="fastfood" class="categoriesButton" name="fastfood">Fastfood</button>
-        <button type="button" id="pub" class="categoriesButton" name="pub">Pub</button>
-        Near Me:
-        <input type="checkbox" id="nearMeCheckbox" onclick="isChecked()">
+      <button
+        type="button"
+        id="alacarte"
+        class="categoriesButton"
+        name="alacarte"
+      >
+        À la carte
+      </button>
+      <button type="button" id="cafe" class="categoriesButton" name="cafe">
+        Café
+      </button>
+      <button
+        type="button"
+        id="fastfood"
+        class="categoriesButton"
+        name="fastfood"
+      >
+        Fastfood
+      </button>
+      <button type="button" id="pub" class="categoriesButton" name="pub">
+        Pub
+      </button>
+      Near Me:
+      <input type="checkbox" id="nearMeCheckbox" onclick="isChecked()" />
     </div>
     <!-- searchbar & buttons -->
 
     <!-- range slider -->
     <div id="sliderToggle" style="display: none">
-        <input type="range" id="slider" min="0" max="1000" value="500">
-            <div id="selector">
-                <div class="sliderButton"></div>
-                <div id="sliderValue"></div>
-            </div>
+      <input type="range" id="slider" min="0" max="1000" value="500" />
+      <div id="selector">
+        <div class="sliderButton"></div>
+        <div id="sliderValue"></div>
+      </div>
     </div>
     <!-- range slider -->
 
@@ -64,5 +99,5 @@
     <div id="map" style="height: 500px"></div>
     <script src="js/map.js"></script>
     <script src="js/api.js"></script>
-</body>
+  </body>
 </html>
