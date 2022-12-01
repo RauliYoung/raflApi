@@ -28,60 +28,64 @@ const idQuery = (id) => {
 
     const apiCall = 'https://api.allorigins.win/get?url=' + 
     encodeURIComponent('https://open-api.myhelsinki.fi/v2/place/'+id)
-
+    console.log(apiCall)
     fetch(apiCall)                    
-    .then(function(response){  
+    .then(function(response){
+        console.log("resp begins")  
         return response.json();        
     }).then(function(json){
        getData(JSON.parse(json.contents))
     }).catch(function(error){       
         console.log(error);           
     });
+
 }
+const typeSearch = (types, name) => {
 
-// Search restaraunt based on name (string), categories (array) and best rating (array)
-const apiQuery = (name, types, rating) => {
-       
-    if (name == ""){
-        name = ":D"
-    }
+    const typeString = types.join(",")
+    console.log(typeString.length>0)
 
-    name = name.toLowerCase()
     const apiCall = 'https://api.allorigins.win/get?url= ' + 
-    encodeURIComponent('https://open-api.myhelsinki.fi/v2/places/?tags_search=restaurants')
-    
-    fetch(apiCall)                    
-    .then(function(response){  
-        return response.json();        
+    encodeURIComponent('https://open-api.myhelsinki.fi/v2/places/?tags_search='+typeString)
+    console.log(apiCall)
+
+    fetch(apiCall)               
+    .then(function(response){
+        return response.json();
     }).then(function(json){
-        console.log("es")  
+        
         resetMap()
-        for (const i of JSON.parse(json.contents).data){
-            const restarauntName = i.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
-            for (type of types) {
-                for (const tag of i.tags){
-                    if (tag.name.toLowerCase().includes(type)){      
-                        addToMap(i);
-                    }
+        console.log(name)
+        for (const objekt of JSON.parse(json.contents).data){
+            if (name.length > 0){
+                const restName = objekt.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
+                console.log()
+                if (restName.includes(name.toLowerCase())){
+                    addToMap(objekt)
                 }
+            } else {
+                addToMap(objekt)
             }
-            if (restarauntName.includes(name)){
-                addToMap(i);
-            }
-    }        
-    }).catch(function(error){       
+        }
+        
+        
+        }).catch(function(error){       
         console.log(error);           
     });
 }
 
-const search = () => {
-    const queryValue = document.getElementsByClassName("searchField")[0].value;
-    apiQuery(queryValue, [], [])
+const ratingSearch = (rating) => {
+    ;
 }
 
+const search = () => {
+    const queryValue = document.getElementsByClassName("searchField")[0].value;
+    typeSearch(["restaurants"], queryValue)
+}
+
+
 //idQuery(289)
-nearestQuery("")
-apiQuery("luckiefun", [], [])
+
 
 
 
