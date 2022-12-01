@@ -53,13 +53,12 @@ const typeSearch = (types, name) => {
     .then(function(response){
         return response.json();
     }).then(function(json){
-        
         resetMap()
         console.log(name)
         for (const objekt of JSON.parse(json.contents).data){
             if (name.length > 0){
                 const restName = objekt.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
-                console.log()
+                console.log("lol")
                 if (restName.includes(name.toLowerCase())){
                     addToMap(objekt)
                 }
@@ -82,6 +81,8 @@ const search = () => {
     const queryValue = document.getElementsByClassName("searchField")[0].value;
     typeSearch(["restaurants"], queryValue)
 }
+
+
 
 
 //idQuery(289)
