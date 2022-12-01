@@ -21,7 +21,7 @@ function onSuccess (position) {
         longitude
     } = position.coords;
     currentLocation.push(latitude,longitude);
-    
+}
 
 
 
