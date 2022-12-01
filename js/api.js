@@ -49,6 +49,7 @@ const idQuery = (id) => {
 const nameQuery = (name) => {
     const ravintolat = localStorage.getItem("ravintolaOliot");
     const ravintolaOliot2 = JSON.parse(ravintolat).data;
+    map.resetMap()
   for (const objekt of ravintolaOliot2) {
     if (name.length > 0) {
       const restName = objekt.name.fi
