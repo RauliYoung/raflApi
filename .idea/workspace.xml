@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef9ca146-37c6-49c8-ae20-6bd2eceb9afa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/js/categories.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tyylit/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/tyylit/search.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
