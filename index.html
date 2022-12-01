@@ -5,19 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="js/navbar.js"></script>
+    <script src="./js/fetchData.js"></script>
     <link rel="stylesheet" href="tyylit/style.css" />
     <title>RaflAPI</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
-    <link rel="stylesheet" href="tyylit/search.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" href="tyylit/search.css" />
     <script src="js/slider.js"></script>
-    <script src="js/mapclass.js"></script>
+      <script src="js/mapclass.js"></script>
 </head>
-<body>
+  <body>
+    <script>
+      fetchData();
+    </script>
     <!-- navigation-->
     <script>
       makeNavBar();
@@ -26,35 +35,41 @@
 
     <!-- searchbar & buttons -->
     <div class="searchBox">
-        <input type="text" class="searchField" size="50" placeholder="Search for café or restaurant">
-        <button type="button" class="searchButton" onclick="search()">Search</button>
+      <input
+        type="text"
+        class="searchField"
+        size="50"
+        placeholder="Search for café or restaurant"
+      />
+      <button type="button" class="searchButton" onclick="search()">
+        Search
+      </button>
     </div>
     <div class="categories">
-        <button type="button" class="categoriesButton">À la carte</button>
-        <button type="button" class="categoriesButton">Café</button>
-        <button type="button" class="categoriesButton">Fastfood</button>
-        <button type="button" class="categoriesButton">Pub</button>
+      <button type="button" class="categoriesButton">À la carte</button>
+      <button type="button" class="categoriesButton">Café</button>
+      <button type="button" class="categoriesButton">Fastfood</button>
+      <button type="button" class="categoriesButton">Pub</button>
     </div>
     <!-- searchbar & buttons -->
 
     <!-- range slider -->
     <div id="sliderDiv">
-        <label for="nearMeCheckbox" id="nearMeCheckboxText">Near me</label>
-        <input type="checkbox" id="nearMeCheckbox">
-        <div id="sliderLeft">0m</div>
-        <input type="range" id="slider" min="0" max="1000" value="500">
-        <div id="selector">
-            <div class="sliderButton"></div>
-            <div id="sliderValue"></div>
-        </div>
-        <div id="sliderRight">1000m</div>
+      <label for="nearMeCheckbox" id="nearMeCheckboxText">Near me</label>
+      <input type="checkbox" id="nearMeCheckbox" />
+      <div id="sliderLeft">0m</div>
+      <input type="range" id="slider" min="0" max="1000" value="500" />
+      <div id="selector">
+        <div class="sliderButton"></div>
+        <div id="sliderValue"></div>
+      </div>
+      <div id="sliderRight">1000m</div>
     </div>
     <!-- range slider -->
 
     <!-- kartta -->
     <div id="map" style="height: 500px"></div>
-    <script type="module" src="js/map.js"></script>
-    <script type="module" src="js/api.js"></script>
-    
+    <script defer src="js/map.js"></script>
+    <script defer src="js/api.js"></script>
 </body>
 </html>

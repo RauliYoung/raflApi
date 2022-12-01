@@ -3,6 +3,7 @@
 // Longitude & Latitude of Helsinki
 let helsinki_coordinates = [60.192059, 24.945831]
 
+const currentLocation=[]
 let options
 
 options= {
@@ -19,6 +20,13 @@ function onSuccess (position) {
         latitude,
         longitude
     } = position.coords;
+    currentLocation.push(latitude,longitude);
+    
+
+
+
+const nothing = () => {
+
 currentLocation=[latitude,longitude]
 }
 
