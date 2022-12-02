@@ -65,6 +65,7 @@ const nameQuery = (name) => {
 const ratingSearch = (rating) => {};
 
 const search = () => {
+  selectedBtn();
   const queryValue = document.getElementsByClassName("searchField")[0].value;
   nameQuery(queryValue);
 };
