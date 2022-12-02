@@ -30,7 +30,7 @@ function selectedBtn(){
         categoriesList = categoriesList.filter(i => i !== 'pub');
     }
 
-    console.log(categoriesList);
+    return categoriesList;
 }
 
 
