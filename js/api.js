@@ -56,7 +56,9 @@ const nameQuery = (name) => {
         .toLowerCase()
         .replace(/[^a-zA-Z0-9 ]/g, "");
       if (restName.includes(name.toLowerCase())) {
-        map.addMarker(objekt.id, restName, [objekt.location.lat, objekt.location.lon]);
+        map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon]);
+        console.log(objekt)
+        createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon], objekt.opening_hours_url)
       }
     } 
   }
