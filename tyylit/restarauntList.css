@@ -1,0 +1,23 @@
+#ravintolaValikko {
+    width: 100%;
+}
+
+#ravintolaValikko  li {
+    background-color: #216477;
+    list-style: none;
+    padding: 1px;
+    margin: 1%;
+    display: flex;
+    }
+
+#ravintolaValikko li a {
+    margin-left: 7%;
+    margin-top: 2.5%;
+}
+
+#ravintolaValikko h4 {
+    text-align: center;
+}
+#ravintolaValikko li p {
+    margin-left: 7%;
+}
