@@ -1,18 +1,35 @@
-let ul = document.getElementById("restList")
+const ul = document.getElementById("restList")
 console.log(ul)
 
-let createListItem = (text) => {
+const aukiOlo = (url) => {
+    let aukiolo;
+    apiCall = url
+    fetch(apiCall)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (json) {
+    console.log(json.detail)
+      if (json.detail == "Ei löydy."){
+        aukiolo = "not found"
+      } else {console.log("Lol")}
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    return aukiOlo;
+}
+
+const createListItem = (id, name, latlong, openingHours) => {
     let item = 
     `
     <li> 
-        <p>${text}</p> <a href="paska">more info</a> <p> auki tänään: 7:00-16:00 </p>
+        <p>${name}</p> <a href="./resinfo.html?id=${id}">more info</a> <p> auki tänään: ${aukiOlo(openingHours)}</p>
         <a href="lol"> näytä kartalla </a>
     </li>
     `
     ul.innerHTML += item
 }
 
-for (let i=0;i<10;i++){
-    createListItem("ravintola " + i)
-}
+
 
