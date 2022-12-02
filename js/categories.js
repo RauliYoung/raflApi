@@ -29,7 +29,7 @@ function selectedBtn(){
     if (pubBox.checked === false){
         categoriesList = categoriesList.filter(i => i !== 'pub');
     }
-
+    console.log(categoriesList)
     return categoriesList;
 }
 

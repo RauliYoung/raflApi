@@ -12,6 +12,9 @@ class Map {
     //Circle to be initialized
     circle;
 
+    //Marker to current location
+    lmarker;
+
     // Constructor which takes only 'map zoom location'
     constructor (location){
         this.location = location
@@ -42,11 +45,16 @@ class Map {
         ).addTo(this.layerGroup) 
     }
 
+    addLocMarker(latlong){
+        this.lmarker = L.marker(latlong).bindPopup(`<b>Sijaintisi: ${latlong}</b>`
+        ).addTo(this.layerGroup) 
+    }
+
     // Creates circle with given radius
     createCircle(latlong, radius){
         this.circle = L.circle(latlong, 1000, {
             color: "blue", fillOpacity: 0.2
-        }).bindPopup("Hi, I am a circle.").addTo(this.map);
+        }).addTo(this.map);
         //addTo(this.map)
     }
 
@@ -55,8 +63,9 @@ class Map {
         this.circle.setRadius(radius)
     }
 
-    deleteCircle(){
+    deleteLocation(){
         this.map.removeLayer(this.circle)
+        this.map.removeLayer(this.lmarker)
     }
 
     // Get layerGroup object
