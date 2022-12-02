@@ -1,5 +1,3 @@
-"use strict";
-
 // Get data from fetch
 const getData = (es) => {
     console.log(es)
@@ -11,7 +9,6 @@ const getID = () => {
     const urlParameters = new URLSearchParams(query);
     const id = urlParameters.get('id')
     idQuery(id)
-
 }
 
 getID()
