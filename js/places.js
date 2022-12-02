@@ -9,7 +9,7 @@ navigator.geolocation.getCurrentPosition(
 //location, search radius and type
         const request = {
             location: new google.maps.LatLng(pos),
-            radius: 1000,
+            radius: 500,
             type: ['restaurant']
         };
 
