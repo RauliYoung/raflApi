@@ -6,7 +6,9 @@ function isChecked(){
         sliderToggle.style.display = "none" ;
 
         // Koodia (uutta), joka poistaa sijainnin hakuehdoista (ei valmis) sekä kartalta (valmis)
-        map.deleteLocation()
+        if (map.lmarker) {
+            map.deleteLocation()
+        }
         return false
 
     } else {

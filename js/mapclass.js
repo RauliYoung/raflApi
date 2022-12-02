@@ -63,6 +63,7 @@ class Map {
         this.circle.setRadius(radius)
     }
 
+    // Deletes all layers on map related to showing users location
     deleteLocation(){
         this.map.removeLayer(this.circle)
         this.map.removeLayer(this.lmarker)
