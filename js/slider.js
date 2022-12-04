@@ -1,3 +1,5 @@
+'use strict';
+
 function isChecked(){
     let sliderToggle = document.getElementById('sliderToggle');
     let checkbox = document.getElementById('nearMeCheckbox');
@@ -19,4 +21,5 @@ function isChecked(){
         return true
     }
 }
+
 
