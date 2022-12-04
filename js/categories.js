@@ -34,12 +34,12 @@ function selectedBtn(){
     if (pubBox.checked === false){
         categoriesList = categoriesList.filter(i => i !== 'pub');
     }
-<<<<<<< HEAD
+
 
     // Lopuksi palautetaan lopullinen lista halutuista kategorioista.
-=======
+
     console.log(categoriesList)
->>>>>>> main
+
     return categoriesList;
 }
 
