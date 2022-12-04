@@ -47,6 +47,9 @@ const idQuery = (id) => {
 };
 
 const nameQuery = (name) => {
+  if (isChecked()){
+    console.log("sijainti mukaan!")
+  }
     const ravintolat = localStorage.getItem("ravintolaOliot");
     const ravintolaOliot2 = JSON.parse(ravintolat).data;
     map.resetMap()
@@ -58,7 +61,7 @@ const nameQuery = (name) => {
       if (restName.includes(name.toLowerCase())) {
         map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon]);
         console.log(objekt)
-        createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon], objekt.opening_hours_url)
+        createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon], objekt.opening_hours_url, 1)
       }
     } 
   }
