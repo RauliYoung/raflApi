@@ -7,8 +7,8 @@ const categories = document.getElementsByClassName('categoriesCheckbox');
 function selectedBtn(){
     const alacarteBox = document.getElementById('alacarte');
     const cafeBox = document.getElementById('cafe');
-    const fastfoodBox = document.getElementById('fastfood');
-    const pubBox = document.getElementById('pub');
+    const fastfoodBox = document.getElementById('Fast Food');
+    const pubBox = document.getElementById('Pub');
 
     // Alustetaan palautettava lista valituista checkboxeista ja laitetaan sinne 'restaurants' arvo.
     let categoriesList = ['restaurants'];
@@ -28,11 +28,11 @@ function selectedBtn(){
     }
 
     if (fastfoodBox.checked === false){
-        categoriesList = categoriesList.filter(i => i !== 'fastfood');
+        categoriesList = categoriesList.filter(i => i !== 'Fast Food');
     }
 
     if (pubBox.checked === false){
-        categoriesList = categoriesList.filter(i => i !== 'pub');
+        categoriesList = categoriesList.filter(i => i !== 'Pub');
     }
 
 
