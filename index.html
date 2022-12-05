@@ -25,6 +25,7 @@
     <script src="js/categories.js"></script>
     <script src="js/mapclass.js"></script>
     <script src="js/getLoc.js"></script>
+
   </head>
   <body>
     <script>
@@ -90,13 +91,16 @@
 
     <!-- range slider -->
     <div id="sliderToggle" style="display: none">
-      <input type="range" id="slider" min="1" max="1000" value="500"/>
-      <span id="value"></span>
-      <span id="output"></span>
+      <div class="slidecontainer">
+        <p id="sliderText" ><span id="sliderVal"></span> m</p>
+        <input type="range" min="1" max="1000" value="500" class="slider" id="myRange">
+      </div>
+      <script src="js/sliderValueUpdate.js"></script>
+      <!--<input type="range" id="slider" min="0" max="1000" value="500"/>
       <div id="selector">
         <div class="sliderButton"></div>
         <div id="sliderValue"></div>
-      </div>
+      </div>-->
     </div>
     
     <!-- kartta -->

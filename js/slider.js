@@ -20,6 +20,6 @@ function isChecked(){
         searchLocation()
         return true
     }
+    
 }
-
 
