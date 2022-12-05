@@ -73,6 +73,7 @@ const query = (name, tags) => {
     loc = true;
   }
   const ravintolat = localStorage.getItem("ravintolaOliot");
+  //console.log(ravintolat)
   const ravintolaOliot2 = JSON.parse(ravintolat).data;
 
   map.resetMap()
