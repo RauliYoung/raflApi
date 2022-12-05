@@ -1,13 +1,26 @@
+let latlong;
 const successCallBack = (location) => {
-    let latlong = [location.coords.latitude, location.coords.longitude]
+
+    // Callback succeeded, loading finished
+    loadScreenFinished() 
+
+    // Assign current location to variable
+    latlong = [location.coords.latitude, location.coords.longitude]
     
     // Show current location on map
+
+    //Ota myöhemmin arvo slideristä
+    map.resetMap()
     map.createCircle(latlong, 1000)
     map.addLocMarker(latlong)
     
 }
 
 const errorCallBack = (error) => {
+
+    // Callback resulted in error, loading finished.
+    loadScreenFinished()
+
     switch(error.code) {
         case error.POSITION_UNAVAILABLE:
           x.innerHTML = "Location information is unavailable."
@@ -23,11 +36,13 @@ const errorCallBack = (error) => {
 
 
 const searchLocation = () => {
+    // Loads map untill callback
+    loadScreen()
     if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack)
     } else {
         alert("Your browser doenst support Geolocation")
-    } 
+    }
 }
 
 
