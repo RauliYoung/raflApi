@@ -15,6 +15,9 @@ class Map {
     //Marker to current location
     lmarker;
 
+    //Location layerGroup having all layers related to showing location
+    locGroup
+
     // Constructor which takes only 'map zoom location'
     constructor (location){
         this.location = location
@@ -24,11 +27,13 @@ class Map {
     createMap(){
         this.map = L.map('map').setView(this.location, 10);
         this.layerGroup = L.layerGroup()
+        this.locGroup = L.layerGroup()
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(this.map);
         this.map.addLayer(this.layerGroup)
+        this.map.addLayer(this.locGroup)
     }
 
     // Resets map from markers
@@ -47,7 +52,7 @@ class Map {
 
     addLocMarker(latlong){
         this.lmarker = L.marker(latlong).bindPopup(`<b>Sijaintisi: ${latlong}</b>`
-        ).addTo(this.layerGroup) 
+        ).addTo(this.locGroup).openPopup()
     }
 
     // Creates circle with given radius

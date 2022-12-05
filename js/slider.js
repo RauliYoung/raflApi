@@ -1,5 +1,7 @@
 'use strict';
 
+let checked = false;
+
 function isChecked(){
     let sliderToggle = document.getElementById('sliderToggle');
     let checkbox = document.getElementById('nearMeCheckbox');
@@ -11,14 +13,12 @@ function isChecked(){
         if (map.lmarker) {
             map.deleteLocation()
         }
-        return false
+        checked = false;
 
     } else {
-        sliderToggle.style.display = "block";
-
-        // (uusi) Etsii sijainnin, kun near me on painettu (valmis)
         searchLocation()
-        return true
+        sliderToggle.style.display = "block";
+        checked = true;
     }
     
 }

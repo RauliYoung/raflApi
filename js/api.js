@@ -65,10 +65,10 @@ const nameSearch = (object, name) => {
 
 // THE HAKU 
 const query = (name, tags) => {
-
+  deleteList()
   let loc = false;
-
-  if (isChecked()){
+  console.log(checked)
+  if (checked){
     console.log("sijainti mukaan!")
     loc = true;
   }
@@ -79,13 +79,11 @@ const query = (name, tags) => {
   loadScreen()
 
 try {
-
   for (const objekt of ravintolaOliot2) {
   
       const restName = objekt.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
     
       let objtags = objekt.tags.map(tag => {return tag.name})
-      console.log(objtags)
       let tagit = true;
       
       // Tarkistetaan kuuluuko annetut tagit ravintolan tageihin.
@@ -101,8 +99,7 @@ try {
         // Jos haku sijainnin perusteella?
         if (loc) {
           // Otetaan myöhemmin arvo sliderista
-          if (haversineFormula(latlong, [objekt.location.lat, objekt.location.lon]) < 10000){
-            console.log(objekt)
+          if (haversineFormula(latlong, [objekt.location.lat, objekt.location.lon]) < range){
             map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
             createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
           } 
@@ -118,7 +115,7 @@ try {
  setTimeout(loadScreenFinished, 3000)
 
  // Show wanted amount of listItems
- setTimeout(showListItems, 3100, 10) 
+ //setTimeout(showListItems, 3100, 10) 
 
 } catch {
   alert("error")
@@ -127,8 +124,7 @@ try {
 
 // CALLED WHEN SEARCH BUTTON CLICKED
 const search = () => {
+    deleteList()
     const queryValue = document.getElementsByClassName("searchField")[0].value;
-    console.log("l")
-    // queryyn mukaan klikatut nappulat eli tagit ...
-    query(queryValue, ["Pub"]);
+    query(queryValue, selectedBtn());
 }

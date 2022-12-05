@@ -1,22 +1,30 @@
 "use strict";
 
 const ul = document.getElementById("restList")
-const listItems = []
+let listItems = []
 
 // muista lisätä try catch
 const createListItem = (id, name, latlong, openingHours) => {
-    
+
         let item = `
         <li> 
             <p>${name}</p> <a href="./resinfo.html?id=${id}"><p>more info</p></a> <a href="lol"><p>show on the map</p></a></p>
            
         </li>
         `
-        listItems.push(item)
+        if (listItems.length < 5){
+            listItems.push(item)
+        } else {
+            ul.innerHTML = ""
+        }
 }
 
 const createNavigation = () => {
   // tänne listan navigoinnin luominen  
+}
+
+const deleteList = () => {
+    ul.innerHTML = ""
 }
 
 const showListItems = (showCount) => {

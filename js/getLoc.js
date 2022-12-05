@@ -8,12 +8,10 @@ const successCallBack = (location) => {
     latlong = [location.coords.latitude, location.coords.longitude]
     
     // Show current location on map
-
-    //Ota myöhemmin arvo slideristä
-    map.resetMap()
-    map.createCircle(latlong, 1000)
-    map.addLocMarker(latlong)
     
+    //Ota myöhemmin arvo slideristä
+    map.createCircle(latlong, 500)
+    map.addLocMarker(latlong)
 }
 
 const errorCallBack = (error) => {
@@ -36,6 +34,7 @@ const errorCallBack = (error) => {
 
 
 const searchLocation = () => {
+    // Deletes list
     // Loads map untill callback
     loadScreen()
     if (navigator.geolocation){
