@@ -8,5 +8,4 @@ output.innerHTML = slider.value;
 slider.oninput = function() {
     output.innerHTML = this.value;
     range = this.value;
-    console.log(range);
 }
