@@ -1,7 +1,7 @@
 
 
 
-// Get the nearest restauraunts
+// Get the nearest restauraunts TURHA
 const nearestQuery = (coordinates) => {
   const apiCall =
     "https://api.allorigins.win/get?url= " +
@@ -46,33 +46,89 @@ const idQuery = (id) => {
     });
 };
 
-const nameQuery = (name) => {
-  if (isChecked()){
-    console.log("sijainti mukaan!")
-  }
-    const ravintolat = localStorage.getItem("ravintolaOliot");
-    const ravintolaOliot2 = JSON.parse(ravintolat).data;
-    map.resetMap()
-  for (const objekt of ravintolaOliot2) {
-    if (name.length > 0) {
-      const restName = objekt.name.fi
+const nameSearch = (object, name) => {
+  console.log(object)
+
+  for (let obj of object){
+    const restName = object.name.fi
         .toLowerCase()
         .replace(/[^a-zA-Z0-9 ]/g, "");
       if (restName.includes(name.toLowerCase())) {
-        map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon]);
-        console.log(objekt)
-        createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon], objekt.opening_hours_url, 1)
+        // Lisää tulos...
+        //addrestMarker(object.id, object.name.fi, [objekt.location.lat, objekt.location.lon])
       }
-    } 
   }
+  console.log(object)
+  
+}
+
+
+// THE HAKU 
+const query = (name, tags) => {
+
+  let loc = false;
+
+  if (isChecked()){
+    console.log("sijainti mukaan!")
+    loc = true;
+  }
+  const ravintolat = localStorage.getItem("ravintolaOliot");
+  const ravintolaOliot2 = JSON.parse(ravintolat).data;
+
+  map.resetMap()
+  loadScreen()
+
+try {
+
+  for (const objekt of ravintolaOliot2) {
+  
+      const restName = objekt.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
+    
+      let objtags = objekt.tags.map(tag => {return tag.name})
+      console.log(objtags)
+      let tagit = true;
+      
+      // Tarkistetaan kuuluuko annetut tagit ravintolan tageihin.
+      if (tags.length > 0) {
+        for (let i of tags){
+          if (!objtags.includes(i)){
+            tagit = false
+          } 
+        }
+      }
+
+      if (restName.includes(name.toLowerCase()) && tagit) {
+        // Jos haku sijainnin perusteella?
+        if (loc) {
+          // Otetaan myöhemmin arvo sliderista
+          if (haversineFormula(latlong, [objekt.location.lat, objekt.location.lon]) < 10000){
+            console.log(objekt)
+            map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
+            createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
+          } 
+      } else {
+        console.log("paska")
+        map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
+        createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
+        
+      }
+  }
+}
+ //Loading stops
+ setTimeout(loadScreenFinished, 3000)
+
+ // Show wanted amount of listItems
+ setTimeout(showListItems, 3100, 10) 
+
+} catch {
+  alert("error")
+}
 };
 
-const ratingSearch = (rating) => {};
-
+// CALLED WHEN SEARCH BUTTON CLICKED
 const search = () => {
-  selectedBtn();
-  const queryValue = document.getElementsByClassName("searchField")[0].value;
-  nameQuery(queryValue);
-};
-
-//idQuery(289)
+    const queryValue = document.getElementsByClassName("searchField")[0].value;
+    console.log("l")
+    // queryyn mukaan klikatut nappulat eli tagit ...
+    query(queryValue, ["Pub"]);
+}

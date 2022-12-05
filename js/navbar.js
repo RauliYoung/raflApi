@@ -2,8 +2,8 @@ const makeNavBar = () => {
   const body = document.querySelector("body");
   let video = "Video";
   let ravintolat = "./resinfo.html";
-  let elokuvateatterit = "Elokuvateatterit";
-  let tissit = "Tissit";
+  let elokuvateatterit = "Info";
+  let tissit = "Tekijät";
   let tatuointiliikkeet = "";
 
   const navBar = `<navbar><ul class="nav-bar">
