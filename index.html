@@ -19,6 +19,8 @@
       integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
       crossorigin=""
     ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi5mT_l3hpm7xGiSBvGlidhYba6m4czmg&libraries=places"></script>
+    <script src="/js/places.js"></script>
     <link rel="stylesheet" href="tyylit/search.css" />
     <link rel="stylesheet" href="tyylit/restarauntList.css"/>
     <script src="js/slider.js"></script>
@@ -68,6 +70,7 @@
         id="top10"
         class="categoriesCheckbox"
         name="top10"
+        onclick="top10()"
       >
       Top 10
       </input>
@@ -110,13 +113,13 @@
       <div id="map" class="" style="height: 500px"></div>
     </artcicle>
     <script src="js/map.js"></script>
-
+    <ol id="places"></ol>
     <!-- ala-valikko löydetystä ravintoloista -->
     <article id="ravintolaValikko">
       <h4>restauraunts found:</h4>
-      <ul id="restList">
+
        
-      </ul>
+
      
     </article>
 
