@@ -5,7 +5,7 @@ const categories = document.getElementsByClassName('categoriesCheckbox');
 
 // Pyöräytetään selectedBtn() funktio search nappia painettaessa (kun api.js scriptin search() funktio lähtee käyntiin).
 function selectedBtn(){
-    const alacarteBox = document.getElementById('alacarte');
+    const top10Box = document.getElementById('top10');
     const cafeBox = document.getElementById('cafe');
     const fastfoodBox = document.getElementById('Fast Food');
     const pubBox = document.getElementById('Pub');
@@ -19,8 +19,8 @@ function selectedBtn(){
     }
 
     // Katsotaan mitkä kategoriat(checkboxit) on valittu ja poistetaan ylimääräiset listasta.
-    if (alacarteBox.checked === false){
-        categoriesList = categoriesList.filter(i => i !== 'alacarte');
+    if (top10Box.checked === false){
+        categoriesList = categoriesList.filter(i => i !== 'top10');
     }
 
     if (cafeBox.checked === false){
