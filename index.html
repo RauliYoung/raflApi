@@ -31,6 +31,7 @@
   </head>
   <body>
     <script>
+     
       if (localStorage.getItem("ravintolaOliot") !== null) {
         console.log("Ei ladattu uudestaan");
       } else {
@@ -110,17 +111,6 @@
       <div id="map" class="" style="height: 500px"></div>
     </artcicle>
     <script src="js/map.js"></script>
-
-    <!-- ala-valikko löydetystä ravintoloista -->
-    <article id="ravintolaValikko">
-      <h4>restauraunts found:</h4>
-      <ul id="restList">
-       
-      </ul>
-     
-    </article>
-
-    <script src="js/valikko.js"></script>
     <script defer src="js/api.js"></script>
   </body>
 </html>

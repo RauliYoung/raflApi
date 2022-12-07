@@ -63,9 +63,10 @@ const nameSearch = (object, name) => {
 }
 
 
-// THE HAKU 
+// THE HAKU
+
 const query = (name, tags) => {
-  deleteList()
+  //deleteList()
   let loc = false;
   console.log(checked)
   if (checked){
@@ -80,6 +81,7 @@ const query = (name, tags) => {
   loadScreen()
 
 try {
+
   for (const objekt of ravintolaOliot2) {
   
       const restName = objekt.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
@@ -102,12 +104,12 @@ try {
           // Otetaan myöhemmin arvo sliderista
           if (haversineFormula(latlong, [objekt.location.lat, objekt.location.lon]) < range){
             map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
-            createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
+            //createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
           } 
       } else {
         console.log("paska")
         map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
-        createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
+        //createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
         
       }
   }

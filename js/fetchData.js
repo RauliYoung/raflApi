@@ -1,5 +1,4 @@
 const fetchData = async () => {
-  alert("haetaan dataa...")
   const response = await fetch(
     "https://api.allorigins.win/get?url= " +
       encodeURIComponent(
@@ -14,5 +13,4 @@ const fetchData = async () => {
   //Olioista string joka tallennetaan cacheen.
   const objectString = JSON.stringify(ravintolatOlio);
   localStorage.setItem("ravintolaOliot", objectString);
-  alert("data haettu.")
 };

@@ -46,7 +46,7 @@ class Map {
         L.marker(latlong).bindPopup(
         `
             <b>${name}</b><br>
-            <a href='/resinfo.html?id=${id}'>Lisää tietoja ravintolasta<a/>`
+            <a href='resinfo.html?id=${id}'>Lisää tietoja ravintolasta<a/>`
         ).addTo(this.layerGroup) 
     }
 
