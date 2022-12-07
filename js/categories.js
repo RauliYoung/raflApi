@@ -3,15 +3,15 @@
 // Haetaan sivuston checkboxit ja tallentuu automaattisesti listaan.
 const categories = document.getElementsByClassName('categoriesCheckbox');
 
+// Alustetaan palautettava lista valituista checkboxeista ja laitetaan sinne 'restaurants' arvo.
+let categoriesList = ['restaurant'];
+
 // Pyöräytetään selectedBtn() funktio search nappia painettaessa (kun api.js scriptin search() funktio lähtee käyntiin).
 function selectedBtn(){
     const top10Box = document.getElementById('top10');
     const cafeBox = document.getElementById('cafe');
     const fastfoodBox = document.getElementById('Fast Food');
     const pubBox = document.getElementById('Pub');
-
-    // Alustetaan palautettava lista valituista checkboxeista ja laitetaan sinne 'restaurants' arvo.
-    let categoriesList = ['restaurants'];
 
     // Lisätään kategorioiden(checkboxien) arvot palautettavaan listaan.
     for (let i = 0; i < categories.length; i++){
