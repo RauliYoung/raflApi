@@ -127,7 +127,7 @@ try {
 
 // CALLED WHEN SEARCH BUTTON CLICKED
 const search = () => {
-    deleteList()
+    //deleteList()
     const queryValue = document.getElementsByClassName("searchField")[0].value;
     query(queryValue, selectedBtn());
 }
