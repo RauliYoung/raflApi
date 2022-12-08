@@ -1,13 +1,16 @@
+body {
+    margin: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: space-between;
+  }
 .searchBox{
-    width: 100%;
-    margin: auto;
-    max-width: 700px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 8px 16px 8px 16px;
+    justify-content: space-between;
 }
 .searchField{
+    width: 100%;
     font-size: 16px;
     box-sizing: border-box;
     text-align: center;
@@ -15,9 +18,8 @@
     border-radius: 4px;
 }
 .searchButton{
-    font-size: 16px;
+    float: right;
     margin-left: 16px;
-    padding: 12px 20px 12px 20px;
     border-radius: 4px;
     cursor: pointer;
 }
@@ -25,18 +27,13 @@
     background: gray;
 }
 .categories{
-    margin: auto;
-    max-width: 700px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    padding: 12px 16px 12px 16px;
 }
 .categoriesCheckbox{
     margin-left: 12px;
-    margin-right: 12px;
     padding-top: 4px;
-    padding-left: 10%;
     font-size: 16px;
     cursor: pointer;
     width: 30px;
@@ -44,7 +41,6 @@
 }
 
 #nearMeCheckbox{
-    margin-left: 10%;
     width: 30px;
     height: 30px;
 }
@@ -65,4 +61,107 @@
 }
 #sliderText{
     text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+    .searchBox{
+        width: 100%;
+
+    }
+    .searchButton:hover{
+        width: 100%;
+    }
+    .searchField{
+        width: 100%;
+        margin-bottom: 3%;
+        font-size: small;
+    }
+    .searchButton{
+        width: 20%;
+        font-size: x-small;
+    }
+    .categories{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 3%;
+        padding: 5px;
+    }
+    .categoriesCheckbox{
+        width: 50%;
+    }
+    #nearMeCheckbox{
+        width: 50%;
+    }
+    #myRange{
+        width: 50%;
+    }
+    #sliderVal{
+        width: 100%;
+    }
+    #sliderText{
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 960px) {
+    .searchBox{
+        width: 100%;
+        display: block;
+        padding:3px;
+    }
+    .searchButton:hover{
+        width: 100%;
+    }
+    .searchField{
+        width: 100%;
+        font-size: small;
+        margin-bottom: 3%;
+    }
+    .searchButton{
+        width: 100%;
+        font-size: medium;
+        margin: 0;
+        
+    }
+    .categories{
+        width: 100%;
+        display: flex;
+        margin-top: 3%;
+        padding: 0;
+    }
+    .categoriesCheckbox{
+        width:10%;
+        margin:0;
+    }
+    #nearMeCheckbox{
+        width:10%;
+        margin:0;
+    }
+    #myRange{
+        width:10%;
+        margin:0;
+    }
+    #sliderVal{
+        display: flex;
+        width:100%;
+        margin:0;
+        
+    }
+    #sliderToggle {
+        display: flex;
+    }
+    #sliderText{
+        width:100%;
+        margin:0;
+        font-size: small;
+    }
+    #text {
+        display: inline-block;
+        justify-content: center;
+        font-size: small;
+        margin: 1%;
+    }
 }
