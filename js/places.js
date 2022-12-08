@@ -1,4 +1,9 @@
-const top10 = () => {
+const top10places = () => {
+
+    if (document.getElementById('top10').checked === false) {
+        map.resetMap();
+        return;
+    }
 
     navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -14,7 +19,6 @@ const top10 = () => {
             };
 
             const results = [];
-            const places = document.getElementById('places');
             const service = new google.maps.places.PlacesService(places);
 
             const callback = (response, status) => {
@@ -34,8 +38,9 @@ const top10 = () => {
                         map.addMarker(null, result.name, [result.geometry.location.lat(), result.geometry.location.lng()])
                     });
             }
-        });
+        })
 }
+
 
 
 
