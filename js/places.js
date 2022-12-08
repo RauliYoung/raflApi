@@ -4,6 +4,8 @@ const top10places = () => {
         map.resetMap();
         return;
     }
+    if (document.getElementById("nearMeCheckbox").checked === false)
+        return;
 
     navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -19,7 +21,7 @@ const top10places = () => {
             };
 
             const results = [];
-            const service = new google.maps.places.PlacesService(places);
+            const service = new google.maps.places.PlacesService(top10);
 
             const callback = (response, status) => {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
