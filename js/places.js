@@ -1,18 +1,16 @@
 const top10 = () => {
-    navigator.geolocation.getCurrentPosition(
 
+    navigator.geolocation.getCurrentPosition(
         (position) => {
             const pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude,
             };
-            //location, search radius and type
-
+            //current location, search radius and type
             const request = {
                 location: new google.maps.LatLng(pos),
-                radius: 500,
-
-                type: ['restaurant']
+                radius: [range],
+                type: [categoriesList]
             };
 
             const results = [];
@@ -26,16 +24,19 @@ const top10 = () => {
                 }
             }
             service.nearbySearch(request, callback);
-            //rating from best
+            //rating from best show only top 10 on map
             const displayResults = () => {
+                map.resetMap()
                 results.filter(result => result.rating)
                     .sort((a, b) => a.rating > b.rating ? -1 : 1)
                     .slice(0, 10)
-                    .forEach(result => {//todo add markers to map
+                    .forEach(result => {
+                        map.addMarker(null, result.name, [result.geometry.location.lat(), result.geometry.location.lng()])
                     });
             }
         });
 }
+
 
 
 
