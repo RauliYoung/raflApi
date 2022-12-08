@@ -62,6 +62,10 @@ body {
 }
 
 @media only screen and (max-width: 620px) {
+  body {
+    margin: 2%;
+    justify-content: space-between;
+  }
   .searchBox {
     width: 100%;
   }
@@ -103,6 +107,10 @@ body {
 }
 
 @media only screen and (max-width: 960px) {
+  body {
+    margin: 2%;
+    justify-content: space-between;
+  }
   .searchBox {
     width: 100%;
     display: block;
