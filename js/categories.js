@@ -4,7 +4,7 @@
 const categories = document.getElementsByClassName('categoriesCheckbox');
 
 // Alustetaan palautettava lista valituista checkboxeista ja laitetaan sinne 'restaurants' arvo.
-let categoriesList = ['restaurant'];
+let categoriesList = ['restaurants'];
 
 // Pyöräytetään selectedBtn() funktio search nappia painettaessa (kun api.js scriptin search() funktio lähtee käyntiin).
 function selectedBtn(){
