@@ -83,14 +83,12 @@ const query = (name, tags) => {
 try {
 
   for (const objekt of ravintolaOliot2) {
-  
       const restName = objekt.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
-    
       let objtags = objekt.tags.map(tag => {return tag.name})
       let tagit = true;
       
       // Tarkistetaan kuuluuko annetut tagit ravintolan tageihin.
-      if (tags.length > 0) {
+      if (tags.length > 1) {
         for (let i of tags){
           if (!objtags.includes(i)){
             tagit = false
@@ -98,11 +96,14 @@ try {
         }
       }
 
+      console.log(tagit)
       if (restName.includes(name.toLowerCase()) && tagit) {
+        console.log("paskaa")
         // Jos haku sijainnin perusteella?
         if (loc) {
           // Otetaan myöhemmin arvo sliderista
           if (haversineFormula(latlong, [objekt.location.lat, objekt.location.lon]) < range){
+            console.log("paska")
             map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
             //createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
           } 
@@ -129,5 +130,6 @@ try {
 const search = () => {
     //deleteList()
     const queryValue = document.getElementsByClassName("searchField")[0].value;
+    console.log(queryValue)
     query(queryValue, selectedBtn());
 }
