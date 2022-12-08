@@ -63,9 +63,10 @@ const nameSearch = (object, name) => {
 }
 
 
-// THE HAKU 
+// THE HAKU
+
 const query = (name, tags) => {
-  deleteList()
+  //deleteList()
   let loc = false;
   console.log(checked)
   if (checked){
@@ -73,12 +74,14 @@ const query = (name, tags) => {
     loc = true;
   }
   const ravintolat = localStorage.getItem("ravintolaOliot");
+  //console.log(ravintolat)
   const ravintolaOliot2 = JSON.parse(ravintolat).data;
 
   map.resetMap()
   loadScreen()
 
 try {
+
   for (const objekt of ravintolaOliot2) {
   
       const restName = objekt.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
@@ -101,12 +104,12 @@ try {
           // Otetaan myöhemmin arvo sliderista
           if (haversineFormula(latlong, [objekt.location.lat, objekt.location.lon]) < range){
             map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
-            createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
+            //createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
           } 
       } else {
         console.log("paska")
         map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
-        createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
+        //createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
         
       }
   }
@@ -124,7 +127,7 @@ try {
 
 // CALLED WHEN SEARCH BUTTON CLICKED
 const search = () => {
-    deleteList()
+    //deleteList()
     const queryValue = document.getElementsByClassName("searchField")[0].value;
     query(queryValue, selectedBtn());
 }
