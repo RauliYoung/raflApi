@@ -20,7 +20,7 @@ function selectedBtn(){
 
     // Katsotaan mitkä kategoriat(checkboxit) on valittu ja poistetaan ylimääräiset listasta.
     if (top10Box.checked === false){
-        categoriesList = categoriesList.filter(i => i !== 'top10');
+        categoriesList = categoriesList.filter(i => i ==='top10');
     }
 
     if (cafeBox.checked === false){
@@ -32,7 +32,7 @@ function selectedBtn(){
     }
 
     if (pubBox.checked === false){
-        categoriesList = categoriesList.filter(i => i !== 'Pub');
+        categoriesList = categoriesList.filter(i => i !== 'bar');
     }
 
 
