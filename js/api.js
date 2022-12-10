@@ -1,36 +1,7 @@
-
-
-
-// Get the nearest restauraunts TURHA
-const nearestQuery = (coordinates) => {
-  const apiCall =
-    "https://api.allorigins.win/get?url= " +
-    encodeURIComponent(
-      "https://open-api.myhelsinki.fi/v2/places/?distance_filter=60.170957,24.942721,0.5"
-    );
-  fetch(apiCall)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      resetMap();
-      for (let object of JSON.parse(json.contents).data) {
-        for (const tag of object.tags) {
-          if (tag.name == "restaurants") {
-            addToMap(object);
-          }
-        }
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-};
-
 // Get one restaurant with specific ID
 const idQuery = (id) => {
   const apiCall =
-    "https://api.allorigins.win/get?url=" +
+    "https://users.metropolia.fi/~ilkkamtk/proxy.php?url=" +
     encodeURIComponent("https://open-api.myhelsinki.fi/v2/place/" + id);
   console.log(apiCall);
   fetch(apiCall)
@@ -39,7 +10,7 @@ const idQuery = (id) => {
       return response.json();
     })
     .then(function (json) {
-      getData(JSON.parse(json.contents));
+      getData(json);
     })
     .catch(function (error) {
       console.log(error);
@@ -74,11 +45,12 @@ const query = (name, tags) => {
     loc = true;
   }
   const ravintolat = localStorage.getItem("ravintolaOliot");
+  console.log(JSON.parse(ravintolat).data)
   //console.log(ravintolat)
   const ravintolaOliot2 = JSON.parse(ravintolat).data;
 
   map.resetMap()
-  loadScreen()
+  //loadScreen()
 
 try {
 
@@ -116,13 +88,13 @@ try {
   }
 }
  //Loading stops
- setTimeout(loadScreenFinished, 3000)
+ //setTimeout(loadScreenFinished, 3000)
 
  // Show wanted amount of listItems
  //setTimeout(showListItems, 3100, 10) 
 
-} catch {
-  alert("error")
+} catch (error) {
+  console.log("haussa tapahtui virhe: " + error)
 }
 };
 
