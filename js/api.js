@@ -80,7 +80,7 @@ try {
   }
 }
  //Loading stops
- setTimeout(loadScreenFinished, 3000)
+ setTimeout(loadScreenFinished, 2000)
 
 
 } catch (error) {
