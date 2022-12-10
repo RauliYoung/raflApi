@@ -58,7 +58,7 @@ class Map {
     // Creates circle with given radius
     createCircle(latlong, radius){
         this.circle = L.circle(latlong, 1000, {
-            color: "blue", fillOpacity: 0.2
+            color: "#216477", fillOpacity: 0.5, weight: 1
         }).addTo(this.map);
         //addTo(this.map)
     }
@@ -72,6 +72,10 @@ class Map {
     deleteLocation(){
         this.map.removeLayer(this.circle)
         this.map.removeLayer(this.lmarker)
+    }
+
+    zoom(loc, zoom_lvl){
+        this.map.flyTo(loc, zoom_lvl)
     }
 
     // Get layerGroup object

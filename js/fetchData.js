@@ -27,7 +27,6 @@ fetch(apiCall)
     })
     .then(function (json) {
       console.log("ladataan vielä")
-      console.log(json)
       const objectString = JSON.stringify(json.data);
       localStorage.setItem("ravintolaOliot", objectString);
     }).then(function(){

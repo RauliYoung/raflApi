@@ -12,6 +12,7 @@ const successCallBack = (location) => {
     //Ota myöhemmin arvo slideristä
     map.createCircle(latlong, 500)
     map.addLocMarker(latlong)
+    map.zoom(latlong, 13)
 }
 
 const errorCallBack = (error) => {

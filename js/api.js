@@ -39,19 +39,16 @@ const nameSearch = (object, name) => {
 const query = (name, tags) => {
   //deleteList()
   let loc = false;
-  console.log(checked)
   if (checked){
     console.log("sijainti mukaan!")
     loc = true;
   }
   const ravintolat = localStorage.getItem("ravintolaOliot");
-  console.log(JSON.parse(ravintolat).data)
-  //console.log(ravintolat)
   const ravintolaOliot2 = JSON.parse(ravintolat)
   console.log(ravintolaOliot2)
 
   map.resetMap()
-  //loadScreen()
+  loadScreen()
 
 try {
 
@@ -59,6 +56,7 @@ try {
       const restName = objekt.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
       let objtags = objekt.tags.map(tag => {return tag.name})
       let tagit = true;
+
       // Tarkistetaan kuuluuko annetut tagit ravintolan tageihin.
       if (tags.length > 1) {
         for (let i of tags){
@@ -67,8 +65,6 @@ try {
           } 
         }
       }
-
-      console.log(tagit)
       if (restName.includes(name.toLowerCase()) && tagit) {
         // Jos haku sijainnin perusteella?
         if (loc) {
@@ -84,10 +80,8 @@ try {
   }
 }
  //Loading stops
- //setTimeout(loadScreenFinished, 3000)
+ setTimeout(loadScreenFinished, 2000)
 
- // Show wanted amount of listItems
- //setTimeout(showListItems, 3100, 10) 
 
 } catch (error) {
   console.log("haussa tapahtui virhe: " + error)
