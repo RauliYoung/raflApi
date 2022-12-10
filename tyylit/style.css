@@ -1,5 +1,5 @@
 html {
-  font-family: "Barlow";
+  font-family: "Barlow", sans-serif;
   max-height: 100vh;
 }
 
@@ -8,6 +8,20 @@ body {
   margin-left: 20%;
   margin-right: 20%;
   justify-content: space-between;
+}
+header {
+  background-color: #216477;
+  text-align: center;
+  padding: 1px;
+  margin-top: 1%;
+  color: #fff;
+}
+footer {
+  background-color: #216477;
+  text-align: center;
+  padding: 1px;
+  margin-top: 1%;
+  color: #fff;
 }
 main {
   margin: 2%;
@@ -47,6 +61,7 @@ main {
 .list-a a:hover {
   background-color: #12313a;
 }
+
 /*NavBar styles*/
 
 /* For mobile phones: */
