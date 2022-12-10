@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="tyylit/style.css" />
     <script src="./js/fetchData.js"></script>
     <title>RaflAPI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
@@ -20,7 +23,6 @@
       crossorigin=""
     ></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi5mT_l3hpm7xGiSBvGlidhYba6m4czmg&libraries=places"></script>
-    <script src="/js/places.js"></script>
     <link rel="stylesheet" href="tyylit/search.css" />
     <link rel="stylesheet" href="tyylit/restarauntList.css"/>
     <script src="js/slider.js"></script>
@@ -61,7 +63,7 @@
         id="searchBtn"
         onclick="search()"
       >
-        Search
+        <p id="text">Search</p>
       </button>
     </div>
     <div class="categories">
@@ -69,13 +71,12 @@
         type="checkbox"
         id="top10"
         class="categoriesCheckbox"
-        name="top10"
-        onclick="top10()"
+        name="restaurant"
       >
-      Top 10
+      <p id="text">Top 10</p>
       </input>
       <input type="checkbox" id="cafe" class="categoriesCheckbox" name="cafe">
-      Café
+      <p id="text">Café</p>
       </input>
       <input
         type="checkbox"
@@ -83,14 +84,14 @@
         class="categoriesCheckbox"
         name="Fast Food"
       >
-      Fastfood
+      <p id="text">Fastfood</p>
       </input>
-      <input type="checkbox" id="Pub" class="categoriesCheckbox" name="Pub">
-      Pub
+      <input type="checkbox" id="Pub" class="categoriesCheckbox" name="bar">
+      <p>Pub</p>
       </input>
 
       <input type="checkbox" id="nearMeCheckbox" onclick="isChecked()" />
-      Near Me
+      <p>Near Me</p>
     </div>
     <!-- searchbar & buttons -->
 
@@ -113,12 +114,12 @@
       <div id="map" class="" style="height: 500px"></div>
     </artcicle>
     <script src="js/map.js"></script>
-    <ol id="places"></ol>
     <!-- ala-valikko löydetystä ravintoloista -->
     <article id="ravintolaValikko">
     </article>
-
+    <script src="/js/places.js"></script>
     <script src="js/valikko.js"></script>
     <script defer src="js/api.js"></script>
+    <footer><h2>© Legitimate Code 4 Lyfe//Sandels group</h2></footer>
   </body>
 </html>

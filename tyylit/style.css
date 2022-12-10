@@ -1,5 +1,6 @@
 html {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Barlow";
+  max-height: 100vh;
 }
 
 body {
@@ -8,7 +9,7 @@ body {
   margin-right: 20%;
   justify-content: space-between;
 }
-s ssmain {
+main {
   margin: 2%;
   border: solid black;
   padding: 2rem;
@@ -37,7 +38,7 @@ s ssmain {
 
 .list-a {
   display: block;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 1rem;
   text-decoration: none;
@@ -57,6 +58,7 @@ s ssmain {
     width: 100%;
     border-bottom: 1px solid #bbb;
     text-align: left;
+    color: #fff;
   }
   .nav-bar-list-right {
     width: 100%;

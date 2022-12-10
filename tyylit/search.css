@@ -1,68 +1,188 @@
-.searchBox{
+html {
+  font-family: "Barlow", sans-serif;
+}
+body {
+  margin: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  justify-content: space-between;
+  border: 1px solid #fff;
+  box-shadow: 0.1rem 0.1rem 0.5rem 0.5rem #5687;
+  padding: 10px;
+}
+.searchBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.searchField {
+  width: 100%;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 12px 20px 12px 20px;
+  border-radius: 4px;
+}
+.searchButton {
+  float: right;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.searchButton:hover {
+  background: gray;
+}
+.categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.categoriesCheckbox {
+  margin-left: 12px;
+  padding-top: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+#nearMeCheckbox {
+  width: 30px;
+  height: 30px;
+}
+
+#myRange {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+#sliderVal {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+#sliderText {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-color: #216477;
+  text-align: center;
+  padding: 1px;
+  margin-top: 3%;
+  color: #fff;
+}
+
+@media only screen and (max-width: 620px) {
+  body {
+    margin: 2%;
+    justify-content: space-between;
+  }
+  .searchBox {
     width: 100%;
-    margin: auto;
-    max-width: 700px;
+  }
+  .searchButton:hover {
+    width: 100%;
+  }
+  .searchField {
+    width: 100%;
+    margin-bottom: 3%;
+    font-size: small;
+  }
+  .searchButton {
+    width: 20%;
+    font-size: x-small;
+  }
+  .categories {
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 16px 8px 16px;
-}
-.searchField{
-    font-size: 16px;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 12px 20px 12px 20px;
-    border-radius: 4px;
-}
-.searchButton{
-    font-size: 16px;
-    margin-left: 16px;
-    padding: 12px 20px 12px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.searchButton:hover{
-    background: gray;
-}
-.categories{
-    margin: auto;
-    max-width: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 16px 12px 16px;
-}
-.categoriesCheckbox{
-    margin-left: 12px;
-    margin-right: 12px;
-    padding-top: 4px;
-    padding-left: 10%;
-    font-size: 16px;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3%;
+    padding: 5px;
+  }
+  .categoriesCheckbox {
+    width: 50%;
+  }
+  #nearMeCheckbox {
+    width: 50%;
+  }
+  #myRange {
+    background-color: aqua;
+  }
+  #sliderVal {
+    width: 100%;
+  }
+  #sliderText {
+    width: 100%;
+  }
 }
 
-#nearMeCheckbox{
-    margin-left: 10%;
-    width: 30px;
-    height: 30px;
-}
-
-#myRange{
-    box-sizing: border-box;
-    margin: auto;
-    width: 60%;
-    align-items: center;
-    justify-content: center;
+@media only screen and (max-width: 960px) {
+  body {
+    margin: 2%;
+    justify-content: space-between;
+  }
+  .searchBox {
+    width: 100%;
+    display: block;
+    padding: 3px;
+  }
+  .searchButton:hover {
+    width: 100%;
+  }
+  .searchField {
+    width: 100%;
+    font-size: small;
+    margin-bottom: 3%;
+  }
+  .searchButton {
+    width: 100%;
+    font-size: medium;
+    margin: 0%;
+    padding: 5px;
+  }
+  .categories {
+    width: 100%;
     display: flex;
-    padding: 26px 0px 26px 0px;
-}
-#sliderVal{
-    align-items: center;
-    justify-content: center;
+    margin-top: 3%;
+    padding: 0;
+  }
+  .categoriesCheckbox {
+    width: 10%;
+    margin: 0;
+  }
+  #nearMeCheckbox {
+    width: 10%;
+    margin: 0;
+  }
+  #myRange {
+    width: 100;
+  }
+  #sliderVal {
     display: flex;
-}
-#sliderText{
-    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+  #sliderToggle {
+    display: flex;
+  }
+  #sliderText {
+    width: 100%;
+    margin: 0;
+    font-size: small;
+  }
+  #text {
+    display: inline-block;
+    justify-content: center;
+    font-size: small;
+    margin: 1%;
+  }
 }
