@@ -17,6 +17,7 @@ const idQuery = (id) => {
     });
 };
 
+// turha
 const nameSearch = (object, name) => {
   console.log(object)
 
