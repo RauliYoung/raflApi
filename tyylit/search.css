@@ -1,13 +1,4 @@
 
-body {
-  margin: 2%;
-  margin-left: 20%;
-  margin-right: 20%;
-  justify-content: space-between;
-  border: 1px solid #fff;
-  box-shadow: 0.1rem 0.1rem 0.5rem 0.5rem #5687;
-  padding: 10px;
-}
 .searchBox {
   display: flex;
   align-items: center;
