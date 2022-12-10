@@ -1,36 +1,7 @@
-
-
-
-// Get the nearest restauraunts TURHA
-const nearestQuery = (coordinates) => {
-  const apiCall =
-    "https://api.allorigins.win/get?url= " +
-    encodeURIComponent(
-      "https://open-api.myhelsinki.fi/v2/places/?distance_filter=60.170957,24.942721,0.5"
-    );
-  fetch(apiCall)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      resetMap();
-      for (let object of JSON.parse(json.contents).data) {
-        for (const tag of object.tags) {
-          if (tag.name == "restaurants") {
-            addToMap(object);
-          }
-        }
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-};
-
 // Get one restaurant with specific ID
 const idQuery = (id) => {
   const apiCall =
-    "https://api.allorigins.win/get?url=" +
+    "https://users.metropolia.fi/~ilkkamtk/proxy.php?url=" +
     encodeURIComponent("https://open-api.myhelsinki.fi/v2/place/" + id);
   console.log(apiCall);
   fetch(apiCall)
@@ -39,7 +10,7 @@ const idQuery = (id) => {
       return response.json();
     })
     .then(function (json) {
-      getData(JSON.parse(json.contents));
+      getData(json);
     })
     .catch(function (error) {
       console.log(error);
@@ -74,11 +45,13 @@ const query = (name, tags) => {
     loc = true;
   }
   const ravintolat = localStorage.getItem("ravintolaOliot");
+  console.log(JSON.parse(ravintolat).data)
   //console.log(ravintolat)
-  const ravintolaOliot2 = JSON.parse(ravintolat).data;
+  const ravintolaOliot2 = JSON.parse(ravintolat)
+  console.log(ravintolaOliot2)
 
   map.resetMap()
-  loadScreen()
+  //loadScreen()
 
 try {
 
@@ -86,7 +59,6 @@ try {
       const restName = objekt.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
       let objtags = objekt.tags.map(tag => {return tag.name})
       let tagit = true;
-      
       // Tarkistetaan kuuluuko annetut tagit ravintolan tageihin.
       if (tags.length > 1) {
         for (let i of tags){
@@ -98,31 +70,27 @@ try {
 
       console.log(tagit)
       if (restName.includes(name.toLowerCase()) && tagit) {
-        console.log("paskaa")
         // Jos haku sijainnin perusteella?
         if (loc) {
           // Otetaan myöhemmin arvo sliderista
           if (haversineFormula(latlong, [objekt.location.lat, objekt.location.lon]) < range){
-            console.log("paska")
             map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
             //createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
           } 
       } else {
-        console.log("paska")
         map.addMarker(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
         //createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
-        
       }
   }
 }
  //Loading stops
- setTimeout(loadScreenFinished, 3000)
+ //setTimeout(loadScreenFinished, 3000)
 
  // Show wanted amount of listItems
  //setTimeout(showListItems, 3100, 10) 
 
-} catch {
-  alert("error")
+} catch (error) {
+  console.log("haussa tapahtui virhe: " + error)
 }
 };
 
@@ -130,6 +98,5 @@ try {
 const search = () => {
     //deleteList()
     const queryValue = document.getElementsByClassName("searchField")[0].value;
-    console.log(queryValue)
     query(queryValue, selectedBtn());
 }
