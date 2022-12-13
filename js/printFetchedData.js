@@ -8,12 +8,15 @@ const tulostaConsoliin = (olio) => {
     document.querySelector("body").innerHTML += `<main>
     <header><h1>${i.name.fi}</h1></header>
     <article>
+    <section class="text">
         <p>${i.description.body}</p> 
         <a href="${i.info_url}">${i.info_url}</a>  
         <p>${i.location.address.street_address}</p>
+        </section>
         <section id="small-map"></section>
         </article>
         </main>`;
   }
   kartta.createMap("small-map");
+  kartta.addLockMarker(ravintolanKoordinaatit);
 };
