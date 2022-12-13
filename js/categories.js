@@ -8,6 +8,7 @@ function selectedBtn(){
     // Alustetaan palautettava lista valituista checkboxeista ja laitetaan sinne 'restaurants' arvo.
 
     const top10Box = document.getElementById('top10');
+    const cafeBox = document.getElementById('cafés');
     const fastfoodBox = document.getElementById('Fast food');
     const pubBox = document.getElementById('Pub');
 
@@ -20,6 +21,10 @@ function selectedBtn(){
     // Katsotaan mitkä kategoriat(checkboxit) on valittu ja poistetaan ylimääräiset listasta.
     if (top10Box.checked === false){
         categoriesList = categoriesList.filter(i => i !=='top10');
+    }
+
+    if (cafeBox.checked === false){
+        categoriesList = categoriesList.filter(i => i !== 'cafés');
     }
 
     if (fastfoodBox.checked === false){
