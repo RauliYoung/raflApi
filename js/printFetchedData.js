@@ -18,5 +18,5 @@ const tulostaConsoliin = (olio) => {
         </main>`;
   }
   kartta.createMap("small-map");
-  kartta.addLockMarker(ravintolanKoordinaatit);
+  kartta.addRMarker(ravintolanKoordinaatit);
 };
