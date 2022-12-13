@@ -51,9 +51,15 @@ class Map {
     }
 
     addLocMarker(latlong){
-        this.lmarker = L.marker(latlong).bindPopup(`<b>Sijaintisi: ${latlong}</b>`
+        this.lmarker = L.marker(latlong).bindPopup(`<b>Täällä</b>`
         ).addTo(this.locGroup).openPopup()
     }
+
+    addRMarker(latlong){
+        this.lmarker = L.marker(latlong).bindPopup(`<b>Täällä</b>`
+        ).addTo(this.map).openPopup()
+    }
+
 
     // Creates circle with given radius
     createCircle(latlong, radius){
