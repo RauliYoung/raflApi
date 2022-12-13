@@ -43,4 +43,4 @@ const displayResults = () => {
             ]);
         });
 };
-document.getElementById("top10").addEventListener("click", top10places);
+
