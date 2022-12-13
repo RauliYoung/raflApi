@@ -1,7 +1,7 @@
 html {
   font-family: "Barlow", sans-serif;
   max-height: 100vh;
-  margin:auto;
+  margin: auto;
 }
 
 body {
@@ -52,6 +52,10 @@ main {
   border-left: 1px solid #bbb;
 }
 
+.nav-bar-list-right a:hover {
+  background-color: #12313a;
+}
+
 .list-a {
   display: block;
   color: #fff;
@@ -60,7 +64,7 @@ main {
   text-decoration: none;
 }
 
-.list-a a:hover {
+.nav-bar-list a:hover {
   background-color: #12313a;
 }
 
