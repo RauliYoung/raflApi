@@ -51,7 +51,7 @@ class Map {
     }
 
     addLocMarker(latlong){
-        this.lmarker = L.marker(latlong).bindPopup(`<b>Sijaintisi: ${latlong}</b>`
+        this.lmarker = L.marker(latlong).bindPopup(`<b>Täällä</b>`
         ).addTo(this.locGroup).openPopup()
     }
 
