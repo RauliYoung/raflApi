@@ -26,6 +26,9 @@ main {
 
 article {
   /* width: calc(100% / 3 - 2rem); */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
   width: 100%;
   padding: 1rem;
   box-sizing: border-box;
@@ -42,7 +45,9 @@ article h1 {
   margin: 0;
   text-align: center;
 }
-
+.text {
+  flex-direction: column-reverse;
+}
 /*NavBar styles*/
 .nav-bar {
   list-style-type: none;
@@ -52,6 +57,10 @@ article h1 {
   background-color: #216477;
   margin-bottom: 1rem;
   margin-top: 1rem;
+}
+#small-map {
+  width: 100%;
+  height: 300px;
 }
 
 .nav-bar-list {
