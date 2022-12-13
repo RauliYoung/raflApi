@@ -46,7 +46,6 @@ article h1 {
   text-align: center;
 }
 .text {
-  max-width: 50%;
   flex-direction: column-reverse;
 }
 /*NavBar styles*/
