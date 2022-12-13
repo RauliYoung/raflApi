@@ -24,8 +24,8 @@ class Map {
     }
 
     // Method to create map
-    createMap(){
-        this.map = L.map('map').setView(this.location, 10);
+    createMap(id){
+        this.map = L.map(id).setView(this.location, 10);
         this.layerGroup = L.layerGroup()
         this.locGroup = L.layerGroup()
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
