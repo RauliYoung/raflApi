@@ -2,6 +2,7 @@ const results = [];
 const service = new google.maps.places.PlacesService(top10);
 
 const top10places = () => {
+    results.length=0;
     if (document.getElementById("top10").checked === false) {
         map.resetMap();
         return;
