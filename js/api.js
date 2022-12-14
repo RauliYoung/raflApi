@@ -33,16 +33,20 @@ const nameSearch = (object, name) => {
 // THE HAKU
 
 const query = (name, tags) => {
-  //deleteList()
+
+  // Katsotaan löytyykö käyttäjän sijainti
   let loc = false;
   if (checked) {
     console.log("sijainti mukaan!");
     loc = true;
   }
+
+  // Haetaan ravintola olio välimuistista
   const ravintolat = localStorage.getItem("ravintolaOliot");
   const ravintolaOliot2 = JSON.parse(ravintolat);
   console.log(ravintolaOliot2);
 
+  // Poistetaan jo kartassa olevat merkit uutta hakua varten
   map.resetMap();
   loadScreen();
 

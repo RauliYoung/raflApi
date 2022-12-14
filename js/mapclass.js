@@ -1,28 +1,28 @@
 class Map {
-  // Intial zoom location
+  // Kartan tarkennus sijainti
   location;
 
-  //Map to be initialized
+  // Oliomuuttuja kartalle
   map;
 
-  //Layer to be initialized
+  // Kartan kerros, mihin lisätään löydettyjen ravintoloiden merkit
   layerGroup;
 
-  //Circle to be initialized
+  // "Near me"- napista
   circle;
 
   //Marker to current location
   lmarker;
 
-  //Location layerGroup having all layers related to showing location
+  // Kerros sijainti merkeille
   locGroup;
 
-  // Constructor which takes only 'map zoom location'
+  // Luokan konstruktori, joka ottaa parametriksi kartan tarkennus sijainnin
   constructor(location) {
     this.location = location;
   }
 
-  // Method to create map
+  // Metodi kartan luomiselle, ottaa parametrina HTML-elementin ID:n mihin kartta lisätään
   createMap(id) {
     this.map = L.map(id).setView(this.location, 10);
     this.layerGroup = L.layerGroup();
@@ -36,12 +36,12 @@ class Map {
     this.map.addLayer(this.locGroup);
   }
 
-  // Resets map from markers
+  // Poistaa kaikkien hakutulosten merkit kartalta
   resetMap() {
     this.layerGroup.clearLayers();
   }
 
-  // Add marker to map with bindPopup
+  // Lisää ravintolan merkin kartalle sisältäen ravintolan nimen ja linkin "Lisää tietoja"-sivulle
   addMarker(id, name, latlong) {
     L.marker(latlong)
       .bindPopup(
@@ -52,20 +52,21 @@ class Map {
       .addTo(this.layerGroup);
   }
 
+  // Lisää sijaniti merkin kartalle
   addLocMarker(latlong) {
     this.lmarker = L.marker(latlong)
       .bindPopup(`<b>Täällä</b>`)
       .addTo(this.locGroup)
       .openPopup();
   }
-
+  // Lisää merkkejä kartalle "Lisää tietoja"- sivulla
   addRMarker(latlong, viesti) {
     this.lmarker = L.marker(latlong)
       .bindPopup(`<b>${viesti}</b>`, {autoClose: false})
       .addTo(this.map)
       .openPopup();
   }
-  // Creates circle with given radius
+  // Luo kartlle ympyrän annettuun sijaintiin annetulla sätelllä
   createCircle(latlong, radius) {
     this.circle = L.circle(latlong, 1000, {
       color: "#216477",
@@ -75,27 +76,27 @@ class Map {
     //addTo(this.map)
   }
 
-  // Edits circle
+  // Muokkaa ympyrän kokoa
   editCircle(radius) {
     this.circle.setRadius(radius);
   }
 
-  // Deletes all layers on map related to showing users location
+  // Poistaa sijainti merkit kartalta
   deleteLocation() {
     this.map.removeLayer(this.circle);
     this.map.removeLayer(this.lmarker);
   }
 
+  // Tarkentaa kartan animaatiolla annettuun sijaintiin
   zoom(loc, zoom_lvl) {
     this.map.flyTo(loc, zoom_lvl);
   }
 
-  // Get layerGroup object
+
   get getLayerGroup() {
     return this.layerGroup;
   }
 
-  // Get map object
   get Map() {
     return this.map;
   }
