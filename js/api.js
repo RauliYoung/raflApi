@@ -10,7 +10,7 @@ const idQuery = (id) => {
       return response.json();
     })
     .then(function (json) {
-      tulostaConsoliin(json);
+      tulostaRavintolanTiedotJaSijainti(json);
     })
     .catch(function (error) {
       console.log(error);
