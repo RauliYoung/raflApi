@@ -1,7 +1,7 @@
 // api.js hoitaa haku toiminnot sekä pelkästään ID:eella tapahtuvan API fetchin
 // Tekijät: Joel Tikkanen, Tristan Ellenberg
 
-// Get one restaurant with specific ID
+// Haetaan yksi ravintola sen ID:n perusteella
 const idQuery = (id) => {
   const apiCall =
     "https://users.metropolia.fi/~ilkkamtk/proxy.php?url=" +

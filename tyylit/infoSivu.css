@@ -14,7 +14,7 @@ body {
   padding: 10px;
 }
 header {
-  background-image: url(otsa_blackandwhite.jpg);
+  background-image: url('../kuvat/otsa_blackandwhite.jpg');
   background-size: 100% 100%;
   background-color: #216477;
   text-align: center;
