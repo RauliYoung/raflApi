@@ -38,9 +38,9 @@ const displayResults = () => {
     .sort((a, b) => (a.rating > b.rating ? -1 : 1))
     .slice(0, 10)
     .forEach((result) => {
-      map.addMarker(null, result.name, [
+      map.addTopMarker(result.name, [
         result.geometry.location.lat(),
         result.geometry.location.lng(),
-      ]);
+      ], result.rating);
     });
 };
