@@ -15,7 +15,7 @@ const makeNavBar = () => {
       <a href="${syna}" class="list-a">Synopsis</a> 
   </li>
   <li class="nav-bar-list">
-      <a href="${esittely}" class="list-a">Video</a> 
+      <a href="${esittely}" class="list-a">Esittely</a> 
   </li>
   <li class="nav-bar-list">
       <a href="${tekijat}" class="list-a">Tekijät</a> 
