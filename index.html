@@ -110,7 +110,12 @@
       <p>Pub</p>
       </input>
 
-      <input type="checkbox" id="nearMeCheckbox" onclick="isChecked()" />
+      <input 
+        type="checkbox" 
+        id="nearMeCheckbox" 
+        onclick="isChecked()"
+        onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"
+      />
       <p>Near Me</p>
     </div>
     <!-- searchbar & buttons -->

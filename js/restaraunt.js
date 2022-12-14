@@ -1,9 +1,9 @@
-// Get data from fetch
+// restauraunts.js hakee tietyn ravintolan ID:n get parametreistä
+// Tekijät: Joel Tikkanen
 const getData = (es) => {
   console.log(es);
 };
 
-// Get ID from GET params
 const getID = () => {
   const query = window.location.search;
   const urlParameters = new URLSearchParams(query);

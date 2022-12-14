@@ -1,3 +1,6 @@
+// fetchdata.js fetchaa helsinki apista kaikki ravintolat ja tallentaa ne välimuistiin
+// Tekijät: Joel Tikkanen, Tristan Ellenberg
+
 //Haetaan apin tiedot ja tallennetaan ne localstorageen.
 const fetchData = async () => {
   const apiCall =
