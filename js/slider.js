@@ -1,3 +1,7 @@
+/*
+Tekijä: Niko Mäenpää
+Tarkoitus: Tässä scriptissä katsotaan "Near me"-checkboxin tilaa ja jos boxi on chekattu näytetään etäisyys slideri.
+ */
 "use strict";
 
 let checked = false;

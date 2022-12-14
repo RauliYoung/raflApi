@@ -1,3 +1,7 @@
+/*
+Tekijä: Niko Mäenpää
+Tarkoitus: Luoda Video-sivulle sama ulkoasu kun muille sivuille ja lisätä siihen video- ja audioelementtejä käsittelevää css-koodia.
+ */
 html {
     font-family: "Barlow", sans-serif;
     max-height: 100vh;
