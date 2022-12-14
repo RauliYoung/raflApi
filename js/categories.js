@@ -1,3 +1,7 @@
+/*
+Tekijä: Niko Mäenpää
+Tarkoitus: Katsoa mikä kustakin checkbox-elementistä on valittuna ja palauttaa niistä merkkijono-lista.
+ */
 "use strict";
 // Haetaan sivuston checkboxit ja tallentuu automaattisesti listaan.
 const categories = document.getElementsByClassName("categoriesCheckbox");

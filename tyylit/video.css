@@ -1,3 +1,7 @@
+/*
+Tekijä: Niko Mäenpää
+Tarkoitus: Luoda Video-sivulle sama ulkoasu kun muille sivuille ja lisätä siihen video- ja audioelementtejä käsittelevää css-koodia.
+ */
 html {
     font-family: "Barlow", sans-serif;
     max-height: 100vh;
@@ -85,12 +89,21 @@ main {
 }
 /* Audio */
 .audio{
+    display: none;
     position: relative;
     margin: auto;
     width: 100%;
     max-width: 300px;
 }
-
+p{
+    display: none;
+}
+.audioButton{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 100px;
+}
 /* For mobile phones: */
 @media only screen and (max-width: 620px) {
     .list-a a:hover,
