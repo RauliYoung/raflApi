@@ -1,45 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap');
-      html {
-        font-family: 'Barlow', sans-serif;
-        max-height: 100vh;
-      }
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap");
+html {
+  font-family: "Barlow", sans-serif;
+  max-height: 100vh;
+}
 
-      body {
-        margin-left: 20%;
-        margin-right: 20%;
-        padding: 0;
-        background-color: #fff;
-      }
+body {
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 0;
+  background-color: #fff;
+}
 
-      header {
-        background-color: #19303b;
-        padding: 1rem;
-        color: #fff;
-      }
+header {
+  background-color: #216477;
+  padding: 1rem;
+  color: #fff;
+}
 
-      main {
-        background-color: #fff;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-      }
+main {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
-      article {
-        /* width: calc(100% / 3 - 2rem); */
-        width: 100%;
-        padding: 1rem;
-        box-sizing: border-box;
-        background-color: burlywood;
-      }
+article {
+  /* width: calc(100% / 3 - 2rem); */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: burlywood;
+}
 
-      article header {
-        background-color: #fff;
-        padding: 0 0 1rem 0;
-        color: #000;
-      }
+article header {
+  background-color: #fff;
+  padding: 0 0 0.5rem 0;
+  color: #000;
+}
 
-      article h1 {
-        margin: 0;
-        text-align: center;
-      }
+article h1 {
+  margin: 0;
+  text-align: center;
+}
+.text {
+  flex-direction: column-reverse;
+}
+/*NavBar styles*/
+.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #216477;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+#small-map {
+  width: 100%;
+  height: 300px;
+}
+
+.nav-bar-list {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+.nav-bar-list-right {
+  float: right;
+  border-left: 1px solid #bbb;
+}
+
+.nav-bar-list-right a:hover {
+  background-color: #12313a;
+}
+
+.list-a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.nav-bar-list a:hover {
+  background-color: #12313a;
+}
+
+#map {
+  height: 400px;
+  max-height: 400px;
+}
+
+/*NavBar styles*/

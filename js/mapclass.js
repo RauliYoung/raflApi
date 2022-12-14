@@ -24,8 +24,8 @@ class Map {
     }
 
     // Method to create map
-    createMap(){
-        this.map = L.map('map').setView(this.location, 10);
+    createMap(id){
+        this.map = L.map(id).setView(this.location, 10);
         this.layerGroup = L.layerGroup()
         this.locGroup = L.layerGroup()
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -51,10 +51,14 @@ class Map {
     }
 
     addLocMarker(latlong){
-        this.lmarker = L.marker(latlong).bindPopup(`<b>Sijaintisi: ${latlong}</b>`
+        this.lmarker = L.marker(latlong).bindPopup(`<b>Täällä</b>`
         ).addTo(this.locGroup).openPopup()
     }
 
+    addRMarker(latlong, viesti){
+        this.lmarker = L.marker(latlong).bindPopup(`<b>${viesti}</b>`
+        ).addTo(this.map).openPopup()
+    }
     // Creates circle with given radius
     createCircle(latlong, radius){
         this.circle = L.circle(latlong, 1000, {

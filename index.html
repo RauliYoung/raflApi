@@ -59,6 +59,7 @@
         class="searchField"
         size="50"
         placeholder="Search for café or restaurant"
+        onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"    
       />
       <button
         type="button"
@@ -66,7 +67,7 @@
         id="searchBtn"
         onclick="search()"
       >
-        <p id="text">Search</p>
+        <p id="text1">Search</p>
       </button>
     </div>
     <div class="categories">
@@ -75,25 +76,44 @@
         id="top10"
         class="categoriesCheckbox"
         name="restaurant"
+        onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"
       >
-      <p id="text">Top 10</p>
+      <p id="text2">Top 10</p>
       </input>
-      <input type="checkbox" id="cafe" class="categoriesCheckbox" name="cafe">
-      <p id="text">Café</p>
+      <input 
+        type="checkbox" 
+        id="cafés" 
+        class="categoriesCheckbox" 
+        name="cafés"
+        onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"
+        >
+      <p id="text3">Café</p>
       </input>
       <input
         type="checkbox"
-        id="Fast Food"
+        id="Fast food"
         class="categoriesCheckbox"
-        name="Fast Food"
+        name="Fast food"
+        onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"
       >
-      <p id="text">Fastfood</p>
+      <p id="text4">Fastfood</p>
       </input>
-      <input type="checkbox" id="Pub" class="categoriesCheckbox" name="Pub">
+      <input 
+        type="checkbox" 
+        id="Pub" 
+        class="categoriesCheckbox" 
+        name="Pub"
+        onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"
+      >
       <p>Pub</p>
       </input>
 
-      <input type="checkbox" id="nearMeCheckbox" onclick="isChecked()" />
+      <input 
+        type="checkbox" 
+        id="nearMeCheckbox" 
+        onclick="isChecked()"
+        onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"
+      />
       <p>Near Me</p>
     </div>
     <!-- searchbar & buttons -->

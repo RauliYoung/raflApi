@@ -7,7 +7,7 @@ let helsinki_coordinates = [60.192059, 24.945831]
 let map = new Map(helsinki_coordinates);
 
 // Map creation
-map.createMap()
+map.createMap("map")
 
 
 

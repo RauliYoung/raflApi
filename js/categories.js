@@ -8,8 +8,8 @@ function selectedBtn(){
     // Alustetaan palautettava lista valituista checkboxeista ja laitetaan sinne 'restaurants' arvo.
 
     const top10Box = document.getElementById('top10');
-    const cafeBox = document.getElementById('cafe');
-    const fastfoodBox = document.getElementById('Fast Food');
+    const cafeBox = document.getElementById('cafés');
+    const fastfoodBox = document.getElementById('Fast food');
     const pubBox = document.getElementById('Pub');
 
     // Lisätään kategorioiden(checkboxien) arvot palautettavaan listaan.
@@ -24,11 +24,11 @@ function selectedBtn(){
     }
 
     if (cafeBox.checked === false){
-        categoriesList = categoriesList.filter(i => i !== 'cafe');
+        categoriesList = categoriesList.filter(i => i !== 'cafés');
     }
 
     if (fastfoodBox.checked === false){
-        categoriesList = categoriesList.filter(i => i !== 'Fast Food');
+        categoriesList = categoriesList.filter(i => i !== 'Fast food');
     }
 
     if (pubBox.checked === false){
