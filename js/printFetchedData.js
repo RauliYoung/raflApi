@@ -12,6 +12,7 @@ const haeSijainti = () => {
   });
   return promise;
 };
+//lisätään oma sijainti
 const koordinaatit = [];
 const omaSijainti = async () => {
   let sijainti;
@@ -23,8 +24,8 @@ const omaSijainti = async () => {
   }
   console.log(sijainti);
 };
-
-const tulostaConsoliin = async (olio) => {
+//Tulostetaan kartalle ravintolan tiedot ja sijainti sekä oma sijainti
+const tulostaRavintolanTiedotJaSijainti = async (olio) => {
   await omaSijainti();
   let ravintolanKoordinaatit = [olio.location.lat, olio.location.lon];
   let kartta = new Map(ravintolanKoordinaatit);
