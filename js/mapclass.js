@@ -58,7 +58,7 @@ class Map {
   // Lisää sijaniti merkin kartalle
   addLocMarker(latlong) {
     this.lmarker = L.marker(latlong)
-      .bindPopup(`<b>Täällä</b>`)
+      .bindPopup(`<b>Olet tässä</b>`)
       .addTo(this.locGroup)
       .openPopup();
   }
