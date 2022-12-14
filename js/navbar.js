@@ -1,6 +1,6 @@
 const makeNavBar = () => {
   const body = document.querySelector("body");
-  let video = "Video";
+  let video = "./video.html";
   let elokuvateatterit = "Info";
   let tekijat = "Tekijät";
 
@@ -15,7 +15,7 @@ const makeNavBar = () => {
     <a href="${tekijat}" class="list-a">${tekijat}</a> 
   </li>
   <li class="nav-bar-list-right">
-    <a href="${video}" class="list-a">${video}</a> 
+    <a href="${video}" class="list-a">Video</a> 
   </li>
 </ul> </navbar>`;
 

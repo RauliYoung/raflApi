@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device.width, initial-scale=1.0"/>
+    <title>Video</title>
+    <script src="js/header.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/footer.js"></script>
+    <link rel="stylesheet" href="tyylit/video.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <script>
+        createHeader();
+    </script>
+    <script>
+        makeNavBar();
+    </script>
+    <main>
+        <video width="parent" height="parent" controls id="video">
+            <source src="video/Raflapi4lyfe.mp4" type="video/mp4">
+        </video>
+        <div>
+            <p>Soundtrack</p>
+            <audio class="audio" controls>
+                <source src="aanet/paskakasa.wav" type="audio/wav">
+            </audio>
+            <p>Editoidut äänet</p>
+            <audio class="audio" controls>
+                <source src="aanet/stereoEditMolemmat.mp3" type="audio/mp3">
+            </audio>
+        </div>
+    </main>
+    <script>
+        createFooter();
+    </script>
+</body>
+</html>
