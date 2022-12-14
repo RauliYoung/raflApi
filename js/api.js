@@ -10,7 +10,7 @@ const idQuery = (id) => {
       return response.json();
     })
     .then(function (json) {
-      tulostaConsoliin(json);
+      tulostaRavintolanTiedotJaSijainti(json);
     })
     .catch(function (error) {
       console.log(error);
@@ -31,22 +31,27 @@ const nameSearch = (object, name) => {
   console.log(object);
 };
 
-// THE HAKU
 
+// Haku ottaa parametreiksi hakusanan ja valitut tagit
 const query = (name, tags) => {
-  //deleteList()
+  // Katsotaan löytyykö käyttäjän sijainti
   let loc = false;
   if (checked) {
     console.log("sijainti mukaan!");
     loc = true;
   }
+
+  // Haetaan ravintola olio välimuistista
   const ravintolat = localStorage.getItem("ravintolaOliot");
   const ravintolaOliot2 = JSON.parse(ravintolat);
   console.log(ravintolaOliot2);
 
+  // Poistetaan jo kartassa olevat merkit uutta hakua varten
   map.resetMap();
+  // Lataus alkaa
   loadScreen();
 
+  // Try-catch lause API:ssa olevan mahdollisen virheen vuoksi
   try {
     for (const objekt of ravintolaOliot2) {
       const restName = objekt.name.fi
@@ -65,41 +70,42 @@ const query = (name, tags) => {
           }
         }
       }
+      // Jos ravintolan nimi sisältää hakusanan
       if (restName.includes(name.toLowerCase()) && tagit) {
         // Jos haku sijainnin perusteella?
         if (loc) {
-          // Otetaan myöhemmin arvo sliderista
+          // Tarkistetaan onko ravintolan koordinaatit halutulla säteellä
           if (
             haversineFormula(latlong, [
               objekt.location.lat,
               objekt.location.lon,
             ]) < range
           ) {
+            // Jos on niin lisätään merkki ravintolasta kartalle
             map.addMarker(objekt.id, objekt.name.fi, [
               objekt.location.lat,
               objekt.location.lon,
             ]);
-            //createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
           }
         } else {
+          // Jos ei sijaintia, mutta ravintolan nimi sisältää hakusanan.
           map.addMarker(objekt.id, objekt.name.fi, [
             objekt.location.lat,
             objekt.location.lon,
           ]);
-          //createListItem(objekt.id, objekt.name.fi, [objekt.location.lat, objekt.location.lon])
         }
       }
     }
-    //Loading stops
+    //Lautaus loppuuu
     setTimeout(loadScreenFinished, 2000);
   } catch (error) {
     console.log("haussa tapahtui virhe: " + error);
   }
 };
 
-// CALLED WHEN SEARCH BUTTON CLICKED
+// Haku, jota kutsutaan kun hakunappia painetaa
 const search = () => {
-  //deleteList()
+
   const queryValue = document.getElementsByClassName("searchField")[0].value;
   query(queryValue, selectedBtn());
 };
