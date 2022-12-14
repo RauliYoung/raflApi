@@ -1,3 +1,6 @@
+// api.js hoitaa haku toiminnot sekä pelkästään ID:eella tapahtuvan API fetchin
+// Tekijät: Joel Tikkanen, Tristan Ellenberg
+
 // Get one restaurant with specific ID
 const idQuery = (id) => {
   const apiCall =
@@ -16,21 +19,6 @@ const idQuery = (id) => {
       console.log(error);
     });
 };
-
-// turha
-const nameSearch = (object, name) => {
-  console.log(object);
-
-  for (let obj of object) {
-    const restName = object.name.fi.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, "");
-    if (restName.includes(name.toLowerCase())) {
-      // Lisää tulos...
-      //addrestMarker(object.id, object.name.fi, [objekt.location.lat, objekt.location.lon])
-    }
-  }
-  console.log(object);
-};
-
 
 // Haku ottaa parametreiksi hakusanan ja valitut tagit
 const query = (name, tags) => {

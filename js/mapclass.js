@@ -1,3 +1,6 @@
+// mapclass.js sijaitsee olio Map, joka on tehty helpoittamaan kartan käyttöä koodissa
+// Tekijät: Joel Tikkanen, Joonas Jouttijärvi
+
 class Map {
   // Kartan tarkennus sijainti
   location;

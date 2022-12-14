@@ -1,3 +1,7 @@
+// distance.js tarkoituksena on laskea etäisyys kahden latituudi,longituudi koordinaatin välillä huomioimatta reittejä.
+// Laskuun on käytetty Haversinen kaavaa. https://stackoverflow.com/questions/14560999/using-the-haversine-formula-in-javascript tästä oli apua.
+// Tekijät: Joel Tikkanen
+
 const toRadians = (n) => {
   return n * (Math.PI / 180);
 };

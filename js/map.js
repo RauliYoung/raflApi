@@ -1,3 +1,7 @@
+//map.js tiedoston tarkoituksena on vain alustaa kartta olio etusivulle.
+
+// Tekijät: Joel Tikkanen
+
 "use strict";
 
 // Longitude & Latitude of Helsinki

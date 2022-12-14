@@ -1,41 +1,46 @@
+// getLoc.js hakee "Near me"-nappia painamalla käyttäjän sijainnin ja asettaa kartalle säädettävän ympyrän.
+// Tekijät: Joel Tikkanen
+
 let latlong;
 const successCallBack = (location) => {
-  // Callback succeeded, loading finished
+  // Takaisin kutsu onnistui
   loadScreenFinished();
 
-  // Assign current location to variable
+  // latlong muuttujaan sijainti
   latlong = [location.coords.latitude, location.coords.longitude];
 
-  // Show current location on map
-
-  //Ota myöhemmin arvo slideristä
+  // Luo ympyrän kartalle 500 metrisellä sätellä
   map.createCircle(latlong, 500);
+  // Asettaa käyttäjän sijaintiin merkin
   map.addLocMarker(latlong);
+  // Tarkentaa animaatiolla kartan lähelle käyttäjän sijaintia.
   map.zoom(latlong, 13);
 };
 
 const errorCallBack = (error) => {
-  // Callback resulted in error, loading finished.
+  // Takaisin kutsu epäonnistui, lataus lopetetaan
   loadScreenFinished();
 
+  // Ilmoittaa virheet eri tapausten avulla.
   switch (error.code) {
     case error.POSITION_UNAVAILABLE:
-      x.innerHTML = "Location information is unavailable.";
+      alert("Location information is unavailable.");
       break;
     case error.PERMISSION_DENIED:
-      x.innerHTML = "User denied the request for Geolocation.";
+      alert("User denied the request for Geolocation.");
       break;
     case error.UNKNOWN_ERROR:
-      x.innerHTML = "An unknown error occurred.";
+      alert("An unknown error occurred.");
       break;
   }
 };
 
 const searchLocation = () => {
-  // Deletes list
-  // Loads map untill callback
+  // Lataus alkaa, kunnes sijainti käyttäjän saadaan tai ei saada
   loadScreen();
+  // Ehtolause sijainnin saatavuuden tarkistamiseksi
   if (navigator.geolocation) {
+    // Hakee sijainnin sekä kutsuu onnistuessa sekä epäonnistuessa omia funktioita
     navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack);
   } else {
     alert("Your browser doenst support Geolocation");

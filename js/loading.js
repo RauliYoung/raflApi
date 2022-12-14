@@ -1,10 +1,11 @@
-// Lataus screen?
+// loading.js hoitaa lataus näkymän kartan tilalle
+// Tekijät: Joel Tikkanen
 
 let loaderoff = true;
 
+// Aloittaa latauksen
 const loadScreen = () => {
   if (loaderoff) {
-    console.log("wtf");
     let map = document.getElementById("map");
     map.style.height = "0px";
     let loader = document.createElement("div");
@@ -14,7 +15,7 @@ const loadScreen = () => {
     loaderoff = false;
   }
 };
-
+// Lopettaa latauksen ja palauttaa kaiken ennalleen
 const loadScreenFinished = () => {
   let map = document.getElementById("map");
   map.style.visibility = "visible";
