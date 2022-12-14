@@ -1,3 +1,7 @@
+/*
+Tekijä: Tristan Ellenberg
+Tarkoitus: Luo navigaatiopalkin sivulle.
+ */
 const makeNavBar = () => {
   const body = document.querySelector("body");
   let video = "./video.html";

@@ -1,7 +1,11 @@
+/*
+Tekijä: Tristan Ellenberg
+Tarkoitus: Tulostaa tekijöiden kuvat sekä tiedot tekijät sivulle.
+ */
 const kuvaLista = [
   {
     caption: "Tristan",
-    description: "Koodari 4 lyfe//Sandels group",
+    description: "Musiikki vastaava<br>Koodari 4 lyfe//Sandels group",
     filename: "kuvat/tristan.jpg",
   },
   {

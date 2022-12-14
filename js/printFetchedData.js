@@ -1,3 +1,9 @@
+/*
+Tekijä: Tristan Ellenberg
+Tarkoitus:Hakee käyttäjän sijainnin, ja lisää oman, 
+sekä ravintolan sijainnin kartalle sekä tulostaa ravintolan lisätiedot käyttäjän  näkyville.
+ */
+
 //Haetaan sijainti
 const haeSijainti = () => {
   const promise = new Promise((resolve, reject) => {
