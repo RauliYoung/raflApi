@@ -14,9 +14,11 @@ body {
   padding: 10px;
 }
 header {
+  background-image: url(otsa_blackandwhite.jpg);
+  background-size: 100% 100%;
   background-color: #216477;
   text-align: center;
-  padding: 1px;
+  padding: 3%;
   color: #fff;
 }
 footer {
