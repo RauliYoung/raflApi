@@ -3,8 +3,12 @@ const makeNavBar = () => {
   let video = "./video.html";
   let elokuvateatterit = "Info";
   let tekijat = "./info.html";
+  let syna = "./pdf/syna.pdf";
+  let kassari = "./pdf/kassari.pdf";
+  let esittely = "https://prezi.com/view/X6jJbQ85HkzhDeHsisjX/";
 
-  const navBar = `<navbar><ul class="nav-bar">
+  const navBar = `<navbar>
+  <ul class="nav-bar">
   <li class="nav-bar-list">
     <a href="./index.html" class="list-a">Etusivu </a> 
   </li>
@@ -12,12 +16,22 @@ const makeNavBar = () => {
       <a href="${elokuvateatterit}" class="list-a">${elokuvateatterit}</a> 
   </li>
   <li class="nav-bar-list">
-    <a href="${tekijat}" class="list-a">Tekijät</a> 
+      <a href="${syna}" class="list-a">Synopsis</a> 
+  </li>
+  <li class="nav-bar-list">
+      <a href="${esittely}" class="list-a">Video</a> 
+  </li>
+  <li class="nav-bar-list">
+      <a href="${tekijat}" class="list-a">Tekijät</a> 
+  </li>
+  <li class="nav-bar-list">
+  <a href="${kassari}" class="list-a">Käsikirjoitus</a> 
   </li>
   <li class="nav-bar-list-right">
-    <a href="${video}" class="list-a">Video</a> 
+      <a href="${video}" class="list-a">Video</a> 
   </li>
-</ul> </navbar>`;
+  </ul> 
+  </navbar>`;
 
   body.innerHTML += navBar;
 };
