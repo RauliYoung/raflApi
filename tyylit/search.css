@@ -19,7 +19,7 @@ Tarkoitus: Luoda tyylikäs ja skaalautuva ulkoasu search-elementteihin ja muihin
   float: right;
   border-radius: 4px;
   cursor: pointer;
-  padding: 0px;
+  padding: 14px 14px;
   padding-left: 2rem;
   padding-right: 2rem;
 }
