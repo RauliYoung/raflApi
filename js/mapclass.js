@@ -61,7 +61,7 @@ class Map {
 
   addRMarker(latlong, viesti) {
     this.lmarker = L.marker(latlong)
-      .bindPopup(`<b>${viesti}</b>`)
+      .bindPopup(`<b>${viesti}</b>`, {autoClose: false})
       .addTo(this.map)
       .openPopup();
   }
