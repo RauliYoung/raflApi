@@ -1,4 +1,7 @@
-
+/*
+Tekijä: Niko Mäenpää, Tristan Ellenberg
+Tarkoitus: Luoda tyylikäs ja skaalautuva ulkoasu search-elementteihin ja muihin elementteihin, kuten footer jne.
+ */
 .searchBox {
   display: flex;
   align-items: center;
