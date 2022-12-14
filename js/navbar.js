@@ -3,10 +3,11 @@ const makeNavBar = () => {
   let video = "./video.html";
   let elokuvateatterit = "Info";
   let tekijat = "./info.html";
+  let etuSivu = "./index.html";
 
   const navBar = `<navbar><ul class="nav-bar">
   <li class="nav-bar-list">
-    <a href="./index.html"> class="list-a">Etusivu </a> 
+    <a href="${etuSivu}" class="list-a">Etusivu </a> 
   </li>
   <li class="nav-bar-list">
       <a href="${elokuvateatterit}" class="list-a">${elokuvateatterit}</a> 
