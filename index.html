@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <script src="js/navbar.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/header.js"></script>
-    <link rel="stylesheet" href="tyylit/style.css" />
+    <link rel="stylesheet" href="tyylit/style.css" >
     <script src="./js/fetchData.js"></script>
     <title>RaflAPI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,15 +19,15 @@
       href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
       integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
       crossorigin=""
-    />
+    >
     <script defer
       src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
       integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
       crossorigin=""
     ></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi5mT_l3hpm7xGiSBvGlidhYba6m4czmg&libraries=places"></script>
-    <link rel="stylesheet" href="tyylit/search.css" />
-    <link rel="stylesheet" href="tyylit/restarauntList.css"/>
+    <link rel="stylesheet" href="tyylit/search.css" >
+    <link rel="stylesheet" href="tyylit/restarauntList.css">
     <script defer src="js/slider.js"></script>
     <script defer src="js/categories.js"></script>
     <script defer src="js/mapclass.js"></script>
@@ -61,14 +61,15 @@
         size="50"
         placeholder="Search for café or restaurant"
         onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"    
-      />
+      >
       <button
         type="button"
         class="searchButton"
         id="searchBtn"
         onclick="search()"
+        style="padding: 1.5%"
       >
-        <p id="text1">Search</p>
+      Search
       </button>
     </div>
     <div class="categories">
@@ -81,7 +82,7 @@
         onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"
       >
       <p id="text2">Top 10</p>
-      </input>
+
       <input 
         type="checkbox" 
         id="cafés" 
@@ -90,16 +91,15 @@
         onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"
         >
       <p id="text3">Café</p>
-      </input>
+      
       <input
         type="checkbox"
-        id="Fast food"
+        id="Fastfood"
         class="categoriesCheckbox"
         name="Fast food"
         onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"
       >
       <p id="text4">Fastfood</p>
-      </input>
       <input 
         type="checkbox" 
         id="Pub" 
@@ -108,14 +108,12 @@
         onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"
       >
       <p>Pub</p>
-      </input>
-
       <input 
         type="checkbox" 
         id="nearMeCheckbox" 
         onclick="isChecked()"
         onkeydown = "if (event.keyCode == 13) document.getElementById('searchBtn').click()"
-      />
+      >
       <p>Near Me</p>
     </div>
     <!-- searchbar & buttons -->
@@ -135,13 +133,10 @@
     </div>
     
     <!-- kartta -->
-    <artcicle id="kartta">
+    <div id="kartta">
       <div id="map" class=""></div>
-    </artcicle>
+    </div>
     <script defer src="js/map.js"></script>
-    <!-- ala-valikko löydetystä ravintoloista -->
-    <article id="ravintolaValikko">
-    </article>
     <script defer src="/js/places.js"></script>
     <script src="js/valikko.js"></script>
     <script defer src="js/api.js"></script>

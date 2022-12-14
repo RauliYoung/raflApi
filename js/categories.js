@@ -12,7 +12,7 @@ function selectedBtn() {
 
   const top10Box = document.getElementById("top10");
   const cafeBox = document.getElementById("cafés");
-  const fastfoodBox = document.getElementById("Fast food");
+  const fastfoodBox = document.getElementById("Fastfood");
   const pubBox = document.getElementById("Pub");
 
   // Lisätään kategorioiden(checkboxien) arvot palautettavaan listaan.
