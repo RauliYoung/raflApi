@@ -1,11 +1,11 @@
 //Haetaan apin tiedot ja tallennetaan ne localstorageen.
-const fetchData = () => {
+const fetchData = async () => {
   const apiCall =
     "https://users.metropolia.fi/~ilkkamtk/proxy.php?url=" +
     encodeURIComponent(
       "https://open-api.myhelsinki.fi/v2/places/?tags_search=restaurants"
     );
-  fetch(apiCall)
+  await fetch(apiCall)
     .then(function (response) {
       console.log("ladataan");
       return response.json();
