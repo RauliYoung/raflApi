@@ -65,6 +65,17 @@ class Map {
       .addTo(this.map)
       .openPopup();
   }
+
+  addTopMarker(name, latlong,rating) {
+    L.marker(latlong)
+      .bindPopup(
+        `
+            <b>${name}</b><br>
+            <b>Rating: ${rating}</b><br>`)
+      
+      .addTo(this.layerGroup);
+  }
+  
   // Creates circle with given radius
   createCircle(latlong, radius) {
     this.circle = L.circle(latlong, 1000, {
