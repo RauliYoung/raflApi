@@ -1,6 +1,6 @@
 const makeNavBar = () => {
   const body = document.querySelector("body");
-  let video = "Video";
+  let video = "./video.html";
   let elokuvateatterit = "Info";
   let tekijat = "./info.html";
 
