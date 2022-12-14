@@ -89,12 +89,21 @@ main {
 }
 /* Audio */
 .audio{
+    display: none;
     position: relative;
     margin: auto;
     width: 100%;
     max-width: 300px;
 }
-
+p{
+    display: none;
+}
+.audioButton{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 100px;
+}
 /* For mobile phones: */
 @media only screen and (max-width: 620px) {
     .list-a a:hover,
