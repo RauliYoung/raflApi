@@ -23,6 +23,9 @@ const makeNavBar = () => {
   <li class="nav-bar-list">
   <a href="${kassari}" class="list-a">Käsikirjoitus</a> 
   </li>
+  <li class="nav-bar-list">
+  <a href="https://github.com/RauliYoung/raflApi" class="list-a">Github</a> 
+  </li>
   <li class="nav-bar-list-right">
       <a href="${video}" class="list-a">Video</a> 
   </li>
