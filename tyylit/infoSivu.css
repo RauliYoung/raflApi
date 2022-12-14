@@ -132,6 +132,10 @@ article p {
   article {
     width: 90%;
   }
+  body {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
 }
 /* For mobile phones: */
 
@@ -155,6 +159,10 @@ article p {
   }
   article {
     width: 100%;
+  }
+  body {
+    margin-left: 0%;
+    margin-right: 0%;
   }
 }
 /* For tablets*/

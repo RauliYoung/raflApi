@@ -97,6 +97,10 @@ main {
     border-bottom: 1px solid #bbb;
     text-align: left;
   }
+  body {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
 }
 /* For mobile phones: */
 
@@ -114,6 +118,10 @@ main {
     width: 100%;
     border-bottom: 1px solid #bbb;
     text-align: left;
+  }
+  body {
+    margin-left: 15%;
+    margin-right: 15%;
   }
 }
 /* For tablets*/

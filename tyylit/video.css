@@ -122,6 +122,10 @@ p{
         border-bottom: 1px solid #bbb;
         text-align: left;
     }
+    body {
+        margin-left: 0%;
+        margin-right: 0%;
+      }
 }
 /* For mobile phones: */
 
@@ -140,5 +144,9 @@ p{
         border-bottom: 1px solid #bbb;
         text-align: left;
     }
+    body {
+        margin-left: 0%;
+        margin-right: 0%;
+      }
 }
 /* For tablets*/
