@@ -1,7 +1,6 @@
-const results = [];
-const service = new google.maps.places.PlacesService(top10);
-
+results = [];
 const top10places = () => {
+  selectedBtn();
   results.length = 0;
   if (document.getElementById("top10").checked === false) {
     map.resetMap();
@@ -14,33 +13,41 @@ const top10places = () => {
       lat: position.coords.latitude,
       lng: position.coords.longitude,
     };
-    selectedBtn();
-    //current location, search radius and keyword
-    const request = {
-      location: new google.maps.LatLng(pos),
-      radius: [range],
-      keyword: [categoriesList.slice(-1)],
-    };
-    const callback = (response, status) => {
-      if (status === google.maps.places.PlacesServiceStatus.OK) {
-        results.push(...response);
-        displayResults();
+
+    async function getDataFromApi(url) {
+      const response = await fetch(url);
+      const apiData = await response.json();
+      console.log(apiData);
+      results.push(apiData);
+    }
+
+    const proxy = "https://users.metropolia.fi/~ilkkamtk/proxy.php?url=";
+    const search =
+        "https://maps.googleapis.com/maps/api/place/nearbysearch/json?&location=" +
+        pos.lat +
+        "," +
+        pos.lng +
+        "&radius=" +
+        range +
+        "&keyword=" +
+        categoriesList.slice(-1) +
+        "&key=AIzaSyDi5mT_l3hpm7xGiSBvGlidhYba6m4czmg";
+    const url = proxy + encodeURIComponent(search);
+    console.log(categoriesList);
+
+    getDataFromApi(url).then(() => {
+      map.resetMap();
+      results[0].results.sort(function (a, b) {
+        return b.rating - a.rating;
+      });
+      for (let i = 0; i < 10; i++) {
+        const name = results[0].results[i].name;
+        const lat = results[0].results[i].geometry.location.lat;
+        const lng = results[0].results[i].geometry.location.lng;
+        const rating = results[0].results[i].rating;
+        const latlong = [lat, lng];
+        map.addTopMarker(name, latlong, rating);
       }
-    };
-    service.nearbySearch(request, callback);
-  });
-};
-//rating from best show only top 10 on map
-const displayResults = () => {
-  map.resetMap();
-  results
-    .filter((result) => result.rating)
-    .sort((a, b) => (a.rating > b.rating ? -1 : 1))
-    .slice(0, 10)
-    .forEach((result) => {
-      map.addTopMarker(result.name, [
-        result.geometry.location.lat(),
-        result.geometry.location.lng(),
-      ], result.rating);
     });
+  });
 };
